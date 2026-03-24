@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Low-Altitude Multimodal Dataset (LAMD)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            line-height: 1.6;
+            color: #222;
+        }
+        h1 { font-size: 36px; margin-bottom: 10px; }
+        h2 { font-size: 28px; margin-top: 40px; }
+        h3 { font-size: 22px; margin-top: 30px; }
+        p { margin: 10px 0; }
+        ul { margin: 10px 0 20px 20px; }
+        img { width: 100%; margin: 20px 0; border-radius: 8px; }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .highlight { background-color: #f0f8ff; padding: 5px 10px; border-radius: 4px; }
+    </style>
+</head>
 
+<body>
+
+<h1>Low-Altitude Multimodal Dataset (LAMD)</h1>
+<p class="highlight">
+A large-scale UAV dataset for <b>scene understanding, spatio-temporal reasoning, and physics-aware image restoration</b>.
+</p>
+
+<h2>Overview</h2>
+<img src="assets/overview.png" alt="Dataset Overview">
+<p>
+LAMD covers <b>urban, rural, industrial, and natural environments</b>, including <b>day/night, multiple weather conditions, and different flight altitudes</b>. 
+It contains multi-modal data: RGB, infrared, and metadata such as GPS, timestamp, altitude, and camera parameters.
+</p>
+
+<h2>Key Features</h2>
+<ul>
+    <li>Multi-task benchmark: Scene Understanding, Spatio-Temporal Learning, Image Restoration</li>
+    <li>Multi-modal data: RGB, IR, metadata</li>
+    <li>Cross-weather paired images for image restoration</li>
+    <li>Multi-temporal data for change detection and Re-ID (future release)</li>
+    <li>Flexible acquisition: multi-altitude, multi-route, repeat sampling</li>
+</ul>
+
+<h2>Task Definitions</h2>
+
+<h3>1. Scene Understanding</h3>
+<ul>
+    <li>Scene classification</li>
+    <li>Semantic segmentation</li>
+    <li>Instance segmentation</li>
+    <li>Object counting</li>
+    <li>OCR</li>
+    <li>Environment understanding</li>
+</ul>
+
+<h3>2. Spatio-Temporal Learning</h3>
+<ul>
+    <li>Change detection</li>
+    <li>Cross-time Re-ID (coming soon)</li>
+</ul>
+
+<h3>3. Image Restoration</h3>
+<ul>
+    <li>Rain / snow / fog removal</li>
+    <li>Cross-weather image translation</li>
+</ul>
+
+<h2>Visualization</h2>
+<img src="assets/vis_seg.png" alt="Segmentation Visualization">
+<img src="assets/vis_weather.png" alt="Weather Comparison">
+
+<h2>Data Access</h2>
+<p>
+- GitHub: <a href="#">Coming Soon</a><br>
+- ScienceDB: <a href="#">Coming Soon</a>
+</p>
+
+<h2>Roadmap</h2>
+<ul>
+    <li>Fine-grained annotations (future)</li>
+    <li>Re-ID labels (future)</li>
+    <li>Multimodal extensions including text descriptions (future)</li>
+    <li>Benchmark expansion</li>
+</ul>
+
+</body>
+</html>
