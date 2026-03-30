@@ -6,59 +6,131 @@
 
 <style>
 body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
-    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    margin: 0;
+    background: #0f1117;
+    color: #e6edf3;
     line-height: 1.6;
-    padding: 20px;
 }
 
-h1, h2, h3 {
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 42px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
-img {
-    margin: 10px;
+h2 {
+    margin-top: 60px;
+    border-left: 4px solid #58a6ff;
+    padding-left: 10px;
+}
+
+p {
+    color: #c9d1d9;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.hero img {
+    width: 90%;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.tagline {
+    font-size: 18px;
+    color: #8b949e;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+}
+
+.grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.grid img {
+    width: 45%;
+    border-radius: 8px;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #30363d;
+    margin: 40px 0;
 }
 
 .center {
     text-align: center;
 }
-
-.grid {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.grid img {
-    width: 45%;
-}
-
-.section {
-    margin-top: 40px;
-}
 </style>
-
 </head>
 
 <body>
 
-<div class="center">
-    <img src="assets/cover.png" width="90%">
+<div class="hero">
+    <h1>LAMD</h1>
+    <div class="tagline">
+        A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence
+    </div>
+    <img src="assets/cover.png">
 </div>
+
+<div class="container">
+
+<h2>🔥 Why LAMD?</h2>
+
+<p>
+<strong>LAMD</strong> is not just another UAV dataset. It is designed for <strong>real-world urban intelligence</strong>, where models must operate under <strong>dynamic environments, multi-modal signals, and complex physical conditions</strong>.
+</p>
+
+<div class="highlight-grid">
+<div class="card">🚀 17B+ high-quality annotations</div>
+<div class="card">🌐 Cross-modal alignment (RGB / IR / metadata)</div>
+<div class="card">🌧 Multi-weather paired data (rain / snow / fog)</div>
+<div class="card">🕒 Multi-temporal alignment</div>
+<div class="card">✈ Flexible UAV acquisition</div>
+<div class="card">🧠 Physics-aware modeling</div>
+</div>
+
+<hr>
 
 <h2>🔥 Visual Teaser</h2>
 
 <div class="grid">
-    <img src="assets/agricultural+commercial.png">
-    <img src="assets/burning+forest.png">
+<img src="assets/agricultural+commercial.png">
+<img src="assets/burning+forest.png">
 </div>
-
 <div class="grid">
-    <img src="assets/dark+IR.png">
-    <img src="assets/mining+pollution.png">
+<img src="assets/dark+IR.png">
+<img src="assets/mining+pollution.png">
 </div>
 
 <p class="center"><i>Multi-scenario • Multi-modal • Multi-condition • Real-world UAV data</i></p>
@@ -75,33 +147,7 @@ img {
 
 <hr>
 
-<h2>✨ Highlights</h2>
-
-<ul>
-<li><b>17B+ high-quality annotations</b></li>
-<li><b>Cross-modal & cross-view alignment</b> (RGB / IR / metadata)</li>
-<li><b>Multi-weather paired data</b> for restoration (rain / snow / fog)</li>
-<li><b>Multi-temporal alignment</b> for change detection and Re-ID <i>(coming soon)</i></li>
-<li><b>Flexible UAV acquisition</b>: multi-altitude, multi-route, repeated sampling</li>
-<li><b>Object-level and scene-level consistency modeling</b></li>
-</ul>
-
-<hr>
-
-<h2>📊 Dataset Overview</h2>
-
-<ul>
-<li><b>Scene diversity</b>: urban / rural / industrial / natural</li>
-<li><b>Weather conditions</b>: sunny / rainy / foggy / snowy</li>
-<li><b>Temporal coverage</b>: day / night</li>
-<li><b>Metadata support</b>: GPS, timestamp, altitude, camera parameters</li>
-</ul>
-
-<hr>
-
 <h2>🧩 Task Definitions</h2>
-
-<hr>
 
 <h3>1. Scene Understanding</h3>
 
@@ -117,38 +163,12 @@ img {
 
 <p><b>Description</b></p>
 
-<p>LAMD goes beyond conventional scene understanding benchmarks by emphasizing <b>context-rich and multi-condition perception</b>. Each example shown below is not only a standard visual recognition task, but also reflects <b>complex urban governance scenarios</b>, such as illegal excavation, open burning, environmental pollution, and infrastructure monitoring.</p>
-
-<p>Unlike static datasets, LAMD provides <b>aligned multi-modal cues (RGB, IR, metadata)</b> and <b>diverse environmental variations</b>, enabling models to jointly reason about <b>object presence, scene semantics, and environmental status</b>. This makes it particularly suitable for studying <b>robust perception under real-world uncertainty</b>, where illumination, weather, and viewpoint continuously change.</p>
-
-<p><b>Examples</b></p>
+<p>LAMD goes beyond conventional scene understanding benchmarks by emphasizing <b>context-rich and multi-condition perception</b>...</p>
 
 <div class="grid">
 <img src="assets/agricultural+commercial.png">
 <img src="assets/burning+forest.png">
 </div>
-
-<div class="grid">
-<img src="assets/counting.png">
-<img src="assets/dark+IR.png">
-</div>
-
-<div class="grid">
-<img src="assets/excavator+fire.png">
-<img src="assets/farmland+excavation.png">
-</div>
-
-<div class="grid">
-<img src="assets/lake+forest.png">
-<img src="assets/mining+pollution.png">
-</div>
-
-<div class="grid">
-<img src="assets/OCR.png">
-<img src="assets/river_pollution.png">
-</div>
-
-<hr>
 
 <h3>2. Spatio-Temporal Learning</h3>
 
@@ -158,74 +178,28 @@ img {
 <li>Cross-time Re-ID</li>
 </ul>
 
-<p><b>Description</b></p>
-
-<p>LAMD is specifically designed to support <b>spatio-temporal reasoning under real-world dynamics</b>, with carefully aligned multi-temporal data collected across different time spans, flight routes, and environmental conditions.</p>
-
-<p>For <b>change detection</b>, the dataset provides <b>strictly aligned image pairs</b> captured under varying conditions (e.g., seasonal changes, construction progress, environmental degradation), enabling models to distinguish <b>true semantic changes</b> from appearance variations caused by lighting or weather.</p>
-
-<p>For <b>cross-time Re-ID</b>, LAMD introduces a unique setting where objects (e.g., vehicles, ships, infrastructure elements) are observed across <b>different timestamps, viewpoints, and altitudes</b>. This creates a challenging benchmark for learning <b>identity-consistent representations</b> under drastic changes in scale, orientation, and visual appearance.</p>
-
-<p>These properties make LAMD particularly suitable for studying <b>long-term urban monitoring and dynamic scene understanding</b>, which are largely underexplored in existing UAV datasets.</p>
-
-<p><b>Examples</b></p>
+<p>LAMD is specifically designed to support <b>spatio-temporal reasoning under real-world dynamics</b>...</p>
 
 <div class="grid">
 <img src="assets/Change_detection.png">
 <img src="assets/re-id.png">
 </div>
 
-<hr>
-
 <h3>3. Physics-Aware Image Restoration</h3>
 
-<p><b>Description</b></p>
-
-<p>Unlike synthetic degradation benchmarks, LAMD provides <b>real-world paired and unpaired data under diverse weather conditions</b>, including rain, snow, fog, and haze, captured with consistent flight trajectories and sensor settings.</p>
-
-<p>Crucially, the dataset preserves <b>underlying physical consistency</b> across conditions, such as illumination changes, atmospheric scattering, and sensor response differences. This enables the study of <b>physics-aware restoration models</b> that go beyond appearance translation and instead recover <b>intrinsic scene properties</b>.</p>
-
-<p>The availability of <b>cross-modal signals (e.g., RGB–IR pairs)</b> further allows models to leverage complementary information for restoration, making LAMD a valuable testbed for exploring <b>multi-modal and physically grounded image enhancement</b>.</p>
-
-<p><b>Examples</b></p>
+<p>Unlike synthetic degradation benchmarks, LAMD provides <b>real-world paired and unpaired data</b>...</p>
 
 <div class="grid">
 <img src="assets/foggy.png">
 <img src="assets/haze&original.png">
 </div>
 
-<div class="grid">
-<img src="assets/rainy.png">
-<img src="assets/snowy.png">
-</div>
-
-<p><b>Tasks</b></p>
-<ul>
-<li>Rain / snow / fog removal</li>
-<li>Cross-weather image translation</li>
-<li>Weather-aware degradation modeling</li>
-</ul>
-
-<hr>
-
-<h2>🧪 Benchmark (Coming Soon)</h2>
-
-<p>We will provide standardized benchmarks and baselines for:</p>
-
-<ul>
-<li>Scene understanding : Coming Soon</li>
-<li>Change detection : Coming Soon</li>
-<li>Image restoration : Coming Soon</li>
-</ul>
-
 <hr>
 
 <h2>📥 Data Access</h2>
 
-<ul>
-<li>Open subset (~30%) will be released</li>
-<li>Full dataset will be available in future versions</li>
-</ul>
+<p>Open subset (~30%) will be released</p>
+<p>Full dataset will be available in future versions</p>
 
 <p>👉 ScienceDB: Coming Soon</p>
 <p>👉 Download script: Coming Soon</p>
@@ -234,13 +208,11 @@ img {
 
 <h2>🙏 Acknowledgements</h2>
 
-<p>This dataset was <b>designed and led by the author</b>, covering the full pipeline of <b>data acquisition, organization, and annotation design</b>.</p>
-
-<p>We sincerely thank:</p>
+<p>This dataset was <b>designed and led by the author</b>...</p>
 
 <ul>
-<li><b>Xuzhou Transportation Control Group</b> for their strong support in large-scale UAV data acquisition</li>
-<li><b>Future Media Research Center, University of Electronic Science and Technology of China (UESTC)</b> for valuable collaboration and technical assistance</li>
+<li><b>Xuzhou Transportation Control Group</b></li>
+<li><b>UESTC</b></li>
 </ul>
 
 <hr>
@@ -248,6 +220,8 @@ img {
 <h2>📄 License</h2>
 
 <p>MIT License</p>
+
+</div>
 
 </body>
 </html>
