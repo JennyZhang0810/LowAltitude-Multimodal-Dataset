@@ -27,7 +27,7 @@ A key feature of LAMD is its **reproducible data acquisition pipeline**, where a
 
 ---
 
-### 🔹 2. Cross-Modal & Cross-Condition Alignment (核心优势🔥)
+### 🔹 2. Cross-Modal & Cross-Condition Alignment🔥
 - RGB / Infrared (IR) / Metadata aligned
 - Cross-weather alignment (rain / snow / fog / sunny)
 - Cross-time alignment (day / night / seasonal)
@@ -41,7 +41,7 @@ A key feature of LAMD is its **reproducible data acquisition pipeline**, where a
 
 ---
 
-### 🔹 3. Multi-Temporal Paired Data (真正区别点)
+### 🔹 3. Multi-Temporal Paired Data
 - Same flight routes under:
   - different weather  
   - different time  
@@ -142,10 +142,6 @@ A key feature of LAMD is its **reproducible data acquisition pipeline**, where a
 
 ### Scene Understanding
 <p align="center">
-  <img src="assets/task_scene.png" width="80%">
-</p>
-
-<p align="center">
   <img src="assets/agricultural+commercial.png" width="100%">
 </p>
 <p align="center">
@@ -208,9 +204,9 @@ A key feature of LAMD is its **reproducible data acquisition pipeline**, where a
 
 We will provide standardized benchmarks for:
 
-- Scene understanding  
-- Change detection  
-- Image restoration  
+- Scene understanding  : Coming Soon 
+- Change detection  : Coming Soon 
+- Image restoration  : Coming Soon 
 
 ---
 
@@ -235,7 +231,7 @@ We will provide standardized benchmarks for:
 
 ## 🙏 Acknowledgements
 
-This dataset was **independently designed and led by the author**, covering the full pipeline of **UAV data acquisition, annotation system design, and dataset construction**.
+This dataset was **designed and led by the author**, covering the full pipeline of **UAV data acquisition, annotation system design, and dataset construction**.
 
 We sincerely acknowledge:
 
