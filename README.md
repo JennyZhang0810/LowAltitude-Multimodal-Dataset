@@ -174,7 +174,7 @@ This dataset was **designed and led by the author**, covering the full pipeline 
 We sincerely thank:
 
 - **Xuzhou Transportation Control Group** for their strong support in large-scale UAV data acquisition  
-- **Future Media Research Center, University of Electronic Science and Technology of China (UESTC)** for valuable collaboration and technical assistance  
+- **Multi-modal intelligence group(MIG), University of Electronic Science and Technology of China (UESTC)** for valuable collaboration and technical assistance  
 
 ---
 
