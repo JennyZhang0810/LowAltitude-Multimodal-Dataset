@@ -55,12 +55,44 @@ The dataset covers diverse environments including **urban, rural, industrial, an
 - Environment understanding  
 
 ---
+<p align="center">
+  <img src="assets/agricultural+commercial.png" width="100%">
+</p>
+<p align="center">
+  <img src="assets/burning+forest.png" width="100%">
+</p>
+<p align="center">
+  <img src="assets/counting.png" width="100%">
+</p>
+<p align="center">
+  <img src="assets/dark+IR.png" width="100%">
+</p>
+<p align="center">
+  <img src="assets/excavator+fire.png" width="100%">
+</p
+<p align="center">
+  <img src="assets/farmland+excavation.png" width="100%">
+</p
+<p align="center">
+  <img src="assets/lake+forest.png" width="100%">
+</p
+<p align="center">
+  <img src="assets/mining+pollution.png" width="100%">
+</p
+<p align="center">
+  <img src="assets/OCR.png" width="100%">
+</p
+<p align="center">
+  <img src="assets/river_pollution.png" width="100%">
+</p
 
 ### 2. Spatio-Temporal Learning
 <p align="center">
-  <img src="assets/task_temporal.png" width="80%">
+  <img src="assets/Change_detection.png" width="80%">
 </p>
-
+<p align="center">
+  <img src="assets/re-id.png" width="80%">
+</p>
 - Change detection  
 - Cross-time Re-ID *(coming soon)*  
 
@@ -68,7 +100,16 @@ The dataset covers diverse environments including **urban, rural, industrial, an
 
 ### 3. Physics-Aware Image Restoration
 <p align="center">
-  <img src="assets/task_restoration.png" width="80%">
+  <img src="assets/foggy.png" width="80%">
+</p>
+<p align="center">
+  <img src="assets/haze&original.png" width="80%">
+</p>
+<p align="center">
+  <img src="assets/rainy.png" width="80%">
+</p>
+<p align="center">
+  <img src="assets/snowy.png" width="80%">
 </p>
 
 - Rain / snow / fog removal  
@@ -108,7 +149,7 @@ We will provide standardized benchmarks and baselines for:
 
 ## 🙏 Acknowledgements
 
-This dataset was **independently designed and led by the author**, covering the full pipeline of **data acquisition, organization, and annotation design**.
+This dataset was **designed and led by the author**, covering the full pipeline of **data acquisition, organization, and annotation design**.
 
 We sincerely thank:
 
