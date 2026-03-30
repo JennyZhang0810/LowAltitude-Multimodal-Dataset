@@ -1,7 +1,6 @@
 <p align="center">
   <img src="assets/cover.png" width="90%">
 </p>
----
 
 ## 🔥 Visual Teaser
 
