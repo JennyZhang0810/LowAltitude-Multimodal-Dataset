@@ -1,62 +1,96 @@
 # Low-Altitude Multimodal Dataset (LAMD)
 
-## 🔥 Overview
-LAMD is a large-scale low-altitude multimodal dataset designed for **scene understanding, spatio-temporal reasoning, and physics-aware image restoration**.
+<p align="center">
+  <img src="assets/cover.png" width="100%">
+</p>
 
-It provides diverse UAV data across **urban, rural, industrial, and natural environments**, covering **day/night, multiple weather conditions, and different flight altitudes**.
+---
+
+## 🔥 Overview
+
+**LAMD** is a large-scale low-altitude multimodal dataset for **urban intelligence**, focusing on **scene understanding, spatio-temporal reasoning, and physics-aware image restoration**.
+
+Unlike conventional UAV datasets, LAMD emphasizes **cross-modal, cross-view, and cross-condition alignment**, enabling models to learn consistent representations across **weather, time, and viewpoints**.
+
+The dataset covers diverse environments including **urban, rural, industrial, and natural scenes**, with rich variations in **illumination, weather, and flight altitude**.
 
 ---
 
 ## ✨ Highlights
-- Multi-task benchmark: scene understanding, change detection, restoration
-- Multi-modal data: RGB, infrared (IR), metadata (GPS, time, altitude)
-- Cross-weather paired data for image restoration (rain / snow / fog)
-- Multi-temporal data for change detection and Re-ID (future release)
-- Flexible data acquisition: multi-altitude, multi-route, repeat sampling
+
+- **17B+ high-quality annotations**
+- **Cross-modal & cross-view alignment** (RGB / IR / metadata)
+- **Multi-weather paired data** for restoration (rain / snow / fog)
+- **Multi-temporal alignment** for change detection and Re-ID *(coming soon)*
+- **Flexible UAV acquisition**: multi-altitude, multi-route, repeated sampling
+- **Object-level and scene-level consistency modeling**
 
 ---
 
 ## 📊 Dataset Overview
 
-![overview](assets/overview.png)
+<p align="center">
+  <img src="assets/overview.png" width="85%">
+</p>
 
-- Diverse scenes: urban / rural / industrial / natural
-- Multi-weather: sunny / rainy / foggy / snowy
-- Multi-time: day / night
-- Metadata: GPS, timestamp, altitude, camera parameters
+- **Scene diversity**: urban / rural / industrial / natural  
+- **Weather conditions**: sunny / rainy / foggy / snowy  
+- **Temporal coverage**: day / night  
+- **Metadata support**: GPS, timestamp, altitude, camera parameters  
 
 ---
 
 ## 🧩 Task Definitions
 
 ### 1. Scene Understanding
-- Scene classification
-- Semantic segmentation
-- Instance segmentation
-- Object counting
-- OCR
-- Environment understanding
+<p align="center">
+  <img src="assets/task_scene.png" width="80%">
+</p>
+
+- Scene classification  
+- Semantic segmentation  
+- Instance segmentation  
+- Object counting  
+- OCR  
+- Environment understanding  
+
+---
 
 ### 2. Spatio-Temporal Learning
-- Change detection
-- Cross-time Re-ID (coming soon)
+<p align="center">
+  <img src="assets/task_temporal.png" width="80%">
+</p>
 
-### 3. Image Restoration
-- Rain / snow / fog removal
-- Cross-weather image translation
+- Change detection  
+- Cross-time Re-ID *(coming soon)*  
+
+---
+
+### 3. Physics-Aware Image Restoration
+<p align="center">
+  <img src="assets/task_restoration.png" width="80%">
+</p>
+
+- Rain / snow / fog removal  
+- Cross-weather image translation  
+- Weather-aware degradation modeling  
 
 ---
 
 ## 🧪 Benchmark (Coming Soon)
 
-We provide baseline results for multiple tasks.
+We will provide standardized benchmarks and baselines for:
+
+- Scene understanding  
+- Change detection  
+- Image restoration  
 
 ---
 
 ## 📥 Data Access
 
-- Open subset (40%) will be released
-- Full dataset will be available in future versions
+- Open subset (~30%) will be released  
+- Full dataset will be available in future versions  
 
 👉 ScienceDB: Coming Soon  
 👉 Download script: Coming Soon  
@@ -65,12 +99,24 @@ We provide baseline results for multiple tasks.
 
 ## 🛣️ Roadmap
 
-- [ ] Fine-grained annotations
-- [ ] Re-ID labels
-- [ ] Multi-modal extensions (text descriptions)
-- [ ] Benchmark expansion
+- [ ] Fine-grained annotations  
+- [ ] Re-ID labels  
+- [ ] Multi-modal extensions (text descriptions)  
+- [ ] Benchmark expansion  
+
+---
+
+## 🙏 Acknowledgements
+
+This dataset was **independently designed and led by the author**, covering the full pipeline of **data acquisition, organization, and annotation design**.
+
+We sincerely thank:
+
+- **Xuzhou Transportation Control Group** for their strong support in large-scale UAV data acquisition  
+- **Future Media Research Center, University of Electronic Science and Technology of China (UESTC)** for valuable collaboration and technical assistance  
 
 ---
 
 ## 📄 License
+
 MIT License
