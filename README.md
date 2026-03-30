@@ -45,28 +45,28 @@ The dataset covers diverse environments including **urban, rural, industrial, an
 
 ---
 <p align="center">
-  <img src="assets/agricultural_commercial.png" width="70%">
+  <img src="assets/agricultural+commercial.png" width="70%">
 </p>
 <p align="center">
-  <img src="assets/burning_forest.png" width="70%">
+  <img src="assets/burning+forest.png" width="70%">
 </p>
 <p align="center">
   <img src="assets/counting.png" width="70%">
 </p>
 <p align="center">
-  <img src="assets/dark_IR.png" width="70%">
+  <img src="assets/dark+IR.png" width="70%">
 </p>
 <p align="center">
-  <img src="assets/excavator_fire.png" width="70">
+  <img src="assets/excavator+fire.png" width="70">
 </p
 <p align="center">
-  <img src="assets/farmland_excavation.png" width="70%">
+  <img src="assets/farmland+excavation.png" width="70%">
 </p
 <p align="center">
-  <img src="assets/lake_forest.png" width="70%">
+  <img src="assets/lake+forest.png" width="70%">
 </p
 <p align="center">
-  <img src="assets/mining_pollution.png" width="70%">
+  <img src="assets/mining+pollution.png" width="70%">
 </p
 <p align="center">
   <img src="assets/OCR.png" width="70%">
@@ -76,14 +76,14 @@ The dataset covers diverse environments including **urban, rural, industrial, an
 </p
 
 ### 2. Spatio-Temporal Learning
+- Change detection  
+- Cross-time Re-ID 
 <p align="center">
   <img src="assets/Change_detection.png" width="70%">
 </p>
 <p align="center">
-  <img src="assets/re_id.png" width="70%">
+  <img src="assets/re-id.png" width="70%">
 </p>
-- Change detection  
-- Cross-time Re-ID 
 
 ---
 
@@ -92,7 +92,7 @@ The dataset covers diverse environments including **urban, rural, industrial, an
   <img src="assets/foggy.png" width="70%">
 </p>
 <p align="center">
-  <img src="assets/haze**&**original.png" width="70%">
+  <img src="assets/haze&original.png" width="70%">
 </p>
 <p align="center">
   <img src="assets/rainy.png" width="70%">
