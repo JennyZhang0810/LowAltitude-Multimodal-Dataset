@@ -1,163 +1,115 @@
 <p align="center">
-  <img src="assets/cover.png" width="80%">
+  <img src="assets/cover.png" width="90%">
 </p>
 
 ---
 
 ## 🔥 Overview
 
-**LAMD** is a large-scale, fully self-collected low-altitude multimodal dataset for **urban intelligence and ecological monitoring**, designed to support **unified modeling across perception, reasoning, and restoration tasks**.
+**LAMD** is a large-scale low-altitude multimodal dataset for **urban intelligence**, focusing on **scene understanding, spatio-temporal reasoning, and physics-aware image restoration**.
 
-Unlike existing UAV datasets, LAMD is built upon **real-world UAV flight acquisition**, with **strictly aligned multi-modal, multi-temporal, and cross-weather data**, enabling consistent learning under complex real environments.
+Unlike conventional UAV datasets, LAMD emphasizes **cross-modal, cross-view, and cross-condition alignment**, enabling models to learn consistent representations across **weather, time, and viewpoints**.
 
-A key feature of LAMD is its **reproducible data acquisition pipeline**:
-- Fixed UAV flight routes  
-- Multi-time & multi-weather re-capturing  
-- Custom alignment & registration algorithms  
-
-👉 Ensures **true spatial-temporal consistency instead of synthetic pairing**
+The dataset covers diverse environments including **urban, rural, industrial, and natural scenes**, with rich variations in **illumination, weather, and flight altitude**.
 
 ---
 
-## ✨ Core Characteristics
+## ✨ Highlights
 
-### 🔹 1. Fully Self-Collected & Reproducible UAV Data
-- Manual UAV flights with fixed trajectories  
-- Rich metadata:
-  - GPS coordinates  
-  - timestamps  
-  - flight altitude  
-  - camera parameters  
-
-👉 Supports **trajectory-level analysis & reproducibility**
+- **17B+ high-quality annotations**
+- **Cross-modal & cross-view alignment** (RGB / IR / metadata)
+- **Multi-weather paired data** for restoration (rain / snow / fog)
+- **Multi-temporal alignment** for change detection and Re-ID *(coming soon)*
+- **Flexible UAV acquisition**: multi-altitude, multi-route, repeated sampling
+- **Object-level and scene-level consistency modeling**
 
 ---
 
-### 🔹 2. Cross-Modal & Cross-Condition Alignment 🔥
-- RGB / Infrared / Metadata aligned  
-- Cross-weather (rain / snow / fog / sunny)  
-- Cross-time (day / night / seasonal)  
-- Cross-view & multi-altitude  
-
-👉 Enables:
-- domain generalization  
-- robust perception  
-- physics-aware modeling  
+## 📊 Dataset Overview
+- **Scene diversity**: urban / rural / industrial / natural  
+- **Weather conditions**: sunny / rainy / foggy / snowy  
+- **Temporal coverage**: day / night  
+- **Metadata support**: GPS, timestamp, altitude, camera parameters  
 
 ---
 
-### 🔹 3. Multi-Temporal Paired Data
-- Same routes under different:
-  - weather  
-  - time  
+## 🧩 Task Definitions
 
-👉 Supports:
-- change detection  
-- cross-time Re-ID  
-- temporal reasoning  
+### 1. Scene Understanding
+- Scene classification  
+- Semantic segmentation  
+- Instance segmentation  
+- Object counting  
+- OCR  
+- Environment understanding  
 
-**✔ Real-world paired data (NOT synthetic)**
+---
+<p align="center">
+  <img src="assets/agricultural_commercial.png" width="70%">
+</p>
+<p align="center">
+  <img src="assets/burning_forest.png" width="70%">
+</p>
+<p align="center">
+  <img src="assets/counting.png" width="70%">
+</p>
+<p align="center">
+  <img src="assets/dark_IR.png" width="70%">
+</p>
+<p align="center">
+  <img src="assets/excavator_fire.png" width="70">
+</p
+<p align="center">
+  <img src="assets/farmland_excavation.png" width="70%">
+</p
+<p align="center">
+  <img src="assets/lake_forest.png" width="70%">
+</p
+<p align="center">
+  <img src="assets/mining_pollution.png" width="70%">
+</p
+<p align="center">
+  <img src="assets/OCR.png" width="70%">
+</p
+<p align="center">
+  <img src="assets/river_pollution.png" width="70%">
+</p
+
+### 2. Spatio-Temporal Learning
+<p align="center">
+  <img src="assets/Change_detection.png" width="70%">
+</p>
+<p align="center">
+  <img src="assets/re_id.png" width="70%">
+</p>
+- Change detection  
+- Cross-time Re-ID 
 
 ---
 
-### 🔹 4. Large-Scale Annotation
-- 17B+ annotations  
-- Semi-automatic + manual verification  
-- Pixel / instance / event-level labels  
-
----
-
-### 🔹 5. Physics-Aware Image Restoration 🌫️
-- Fog / snow / rain degradation  
-- Real captured weather effects  
-
-👉 **NOT synthetic noise — real physical degradation process**
-
----
-
-## 🖼️ Visual Examples
-
-### 🏙️ Scene Understanding
-
+### 3. Physics-Aware Image Restoration
 <p align="center">
-  <img src="assets/agricultural_commercial.png" width="45%">
-  <img src="assets/burning_forest.png" width="45%">
-</p>
-
-<p align="center">
-  <img src="assets/counting.png" width="45%">
-  <img src="assets/dark_ir.png" width="45%">
-</p>
-
-<p align="center">
-  <img src="assets/excavator_fire.png" width="45%">
-  <img src="assets/farmland_excavation.png" width="45%">
-</p>
-
-<p align="center">
-  <img src="assets/lake_forest.png" width="45%">
-  <img src="assets/mining_pollution.png" width="45%">
-</p>
-
-<p align="center">
-  <img src="assets/ocr.png" width="45%">
-  <img src="assets/river_pollution.png" width="45%">
-</p>
-
----
-
-### 🔄 Spatio-Temporal Learning
-
-<p align="center">
-  <img src="assets/change_detection.png" width="60%">
-</p>
-
-<p align="center">
-  <img src="assets/re_id.png" width="60%">
-</p>
-
----
-
-### 🌫️ Image Restoration (Real Degradation)
-
-<p align="center">
-  <img src="assets/foggy.png" width="45%">
-  <img src="assets/haze_original.png" width="45%">
+  <img src="assets/foggy.png" width="70%">
 </p>
 <p align="center">
-  <em>Foggy input vs. clear condition (same trajectory)</em>
+  <img src="assets/haze**&**original.png" width="70%">
 </p>
-
 <p align="center">
-  <img src="assets/rainy.png" width="45%">
-  <img src="assets/snowy.png" width="45%">
+  <img src="assets/rainy.png" width="70%">
+</p>
+<p align="center">
+  <img src="assets/snowy.png" width="70%">
 </p>
 
----
-
-## 📊 Dataset Tasks
-
-### 🏙️ Urban Intelligence
-- Scene understanding  
-- OCR (day/night/IR)  
-- Environment state recognition  
-- Category-aware counting  
-- Road / river segmentation  
-- Event understanding  
-
-### 🌱 Ecological Monitoring
-- Illegal mining  
-- River pollution  
-- Straw burning  
-- Farmland monitoring  
-
-### 🔄 Re-Identification
-- Cross-time UAV tracking  
-- Same trajectory identity matching  
+- Rain / snow / fog removal  
+- Cross-weather image translation  
+- Weather-aware degradation modeling  
 
 ---
 
 ## 🧪 Benchmark (Coming Soon)
+
+We will provide standardized benchmarks and baselines for:
 
 - Scene understanding  
 - Change detection  
@@ -167,24 +119,22 @@ A key feature of LAMD is its **reproducible data acquisition pipeline**:
 
 ## 📥 Data Access
 
-- Open subset (~30%) coming soon  
-- Full dataset release planned  
+- Open subset (~30%) will be released  
+- Full dataset will be available in future versions  
 
----
-
-## 🛣️ Roadmap
-
-- [ ] Fine-grained annotations  
-- [ ] Re-ID expansion  
-- [ ] Language grounding  
-- [ ] Benchmark leaderboard  
+👉 ScienceDB: Coming Soon  
+👉 Download script: Coming Soon  
 
 ---
 
 ## 🙏 Acknowledgements
 
-- Xuzhou Transportation Control Group  
-- UESTC Future Media Research Center  
+This dataset was **designed and led by the author**, covering the full pipeline of **data acquisition, organization, and annotation design**.
+
+We sincerely thank:
+
+- **Xuzhou Transportation Control Group** for their strong support in large-scale UAV data acquisition  
+- **Future Media Research Center, University of Electronic Science and Technology of China (UESTC)** for valuable collaboration and technical assistance  
 
 ---
 
