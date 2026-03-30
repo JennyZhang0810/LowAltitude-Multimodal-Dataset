@@ -1,5 +1,3 @@
-# Low-Altitude Multimodal Dataset (LAMD)
-
 <p align="center">
   <img src="assets/cover.png" width="100%">
 </p>
