@@ -1,227 +1,285 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>LAMD Dataset</title>
-
-<style>
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    margin: 0;
-    background: #0f1117;
-    color: #e6edf3;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-h1 {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-h2 {
-    margin-top: 60px;
-    border-left: 4px solid #58a6ff;
-    padding-left: 10px;
-}
-
-p {
-    color: #c9d1d9;
-}
-
-.hero {
-    text-align: center;
-    padding: 60px 20px 30px;
-}
-
-.hero img {
-    width: 90%;
-    border-radius: 12px;
-    margin-top: 20px;
-}
-
-.tagline {
-    font-size: 18px;
-    color: #8b949e;
-}
-
-.highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.card {
-    background: #161b22;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #30363d;
-}
-
-.grid {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.grid img {
-    width: 45%;
-    border-radius: 8px;
-}
-
-.section {
-    margin-top: 50px;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid #30363d;
-    margin: 40px 0;
-}
-
-.center {
-    text-align: center;
-}
-</style>
-</head>
-
-<body>
-
-<div class="hero">
-    <h1>LAMD</h1>
-    <div class="tagline">
-        A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence
-    </div>
-    <img src="assets/cover.png">
-</div>
-
-<div class="container">
-
-<h2>🔥 Why LAMD?</h2>
-
-<p>
-<strong>LAMD</strong> is not just another UAV dataset. It is designed for <strong>real-world urban intelligence</strong>, where models must operate under <strong>dynamic environments, multi-modal signals, and complex physical conditions</strong>.
+<p align="center">
+  <img src="assets/GITHUB.png" width="90%">
 </p>
 
-<div class="highlight-grid">
-<div class="card">🚀 17B+ high-quality annotations</div>
-<div class="card">🌐 Cross-modal alignment (RGB / IR / metadata)</div>
-<div class="card">🌧 Multi-weather paired data (rain / snow / fog)</div>
-<div class="card">🕒 Multi-temporal alignment</div>
-<div class="card">✈ Flexible UAV acquisition</div>
-<div class="card">🧠 Physics-aware modeling</div>
-</div>
+<h1 align="center">UAIV: A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence</h1>
 
-<hr>
+<p align="center">
+  <i>Multi-scenario • Multi-modal • Multi-condition • Real-world UAV Intelligence</i>
+</p>
 
-<h2>🔥 Visual Teaser</h2>
+---
 
-<div class="grid">
-<img src="assets/agricultural+commercial.png">
-<img src="assets/burning+forest.png">
-</div>
-<div class="grid">
-<img src="assets/dark+IR.png">
-<img src="assets/mining+pollution.png">
-</div>
+## 🔥 Visual Teaser
 
-<p class="center"><i>Multi-scenario • Multi-modal • Multi-condition • Real-world UAV data</i></p>
+<p align="center">
+  <img src="assets/agricultural+commercial.png" width="45%">
+  <img src="assets/burning+forest.png" width="45%">
+</p>
+<p align="center">
+  <img src="assets/dark+IR.png" width="45%">
+  <img src="assets/mining+pollution.png" width="45%">
+</p>
 
-<hr>
+<p align="center">
+  <i>From perception → reasoning → physics-aware understanding under real-world UAV conditions</i>
+</p>
 
-<h2>🔥 Overview</h2>
+---
 
-<p><b>LAMD</b> is a large-scale low-altitude multimodal dataset for <b>urban intelligence</b>, focusing on <b>scene understanding, spatio-temporal reasoning, and physics-aware image restoration</b>.</p>
+## 🔥 Overview
 
-<p>Unlike conventional UAV datasets, LAMD emphasizes <b>cross-modal, cross-view, and cross-condition alignment</b>, enabling models to learn consistent representations across <b>weather, time, and viewpoints</b>.</p>
+**UAIV** is a large-scale low-altitude multimodal dataset designed for **urban intelligence and fine-grained governance analysis**, with a strong focus on:
 
-<p>The dataset covers diverse environments including <b>urban, rural, industrial, and natural scenes</b>, with rich variations in <b>illumination, weather, and flight altitude</b>.</p>
+- **Scene understanding**
+- **Spatio-temporal reasoning**
+- **Physics-aware image restoration**
 
-<hr>
+Unlike conventional UAV datasets, UAIV is built around a key principle:
 
-<h2>🧩 Task Definitions</h2>
+> **Learning consistent representations across modality, condition, and time**
 
-<h3>1. Scene Understanding</h3>
+This is achieved through:
 
-<p><b>Tasks</b></p>
-<ul>
-<li>Scene classification</li>
-<li>Semantic segmentation</li>
-<li>Instance segmentation</li>
-<li>Object counting</li>
-<li>OCR</li>
-<li>Environment understanding</li>
-</ul>
+- **Cross-modal alignment** (RGB / IR / metadata)
+- **Cross-view consistency**
+- **Cross-condition robustness** (weather / illumination / viewpoint)
 
-<p><b>Description</b></p>
+The dataset is constructed via a **self-operated UAV system**, enabling **long-term, large-scale, real-world data collection** with strong diversity in:
 
-<p>LAMD goes beyond conventional scene understanding benchmarks by emphasizing <b>context-rich and multi-condition perception</b>...</p>
+- Scene types (urban / rural / industrial / natural)
+- Illumination (day / night)
+- Weather (rain / snow / fog / haze)
+- Flight altitude and trajectories
 
-<div class="grid">
-<img src="assets/agricultural+commercial.png">
-<img src="assets/burning+forest.png">
-</div>
+---
 
-<h3>2. Spatio-Temporal Learning</h3>
+## 🚀 What Makes UAIV Different
 
-<p><b>Tasks</b></p>
-<ul>
-<li>Change detection</li>
-<li>Cross-time Re-ID</li>
-</ul>
+> Not just a dataset — but a **unified paradigm for real-world multimodal intelligence**
 
-<p>LAMD is specifically designed to support <b>spatio-temporal reasoning under real-world dynamics</b>...</p>
+### 1️⃣ Beyond Multi-Modal → **Cross-Condition Alignment**
 
-<div class="grid">
-<img src="assets/Change_detection.png">
-<img src="assets/re-id.png">
-</div>
+Unlike existing datasets that treat modalities independently, UAIV provides:
 
-<h3>3. Physics-Aware Image Restoration</h3>
+- **Aligned RGB–IR–metadata signals**
+- **Consistent sampling across weather, time, and viewpoints**
 
-<p>Unlike synthetic degradation benchmarks, LAMD provides <b>real-world paired and unpaired data</b>...</p>
+This enables learning **invariant representations under real-world distribution shifts**, rather than overfitting to static conditions.
 
-<div class="grid">
-<img src="assets/foggy.png">
-<img src="assets/haze&original.png">
-</div>
+---
 
-<hr>
+### 2️⃣ Beyond Perception → **Perception + Reasoning + Physics**
 
-<h2>📥 Data Access</h2>
+UAIV is one of the few datasets that jointly supports:
 
-<p>Open subset (~30%) will be released</p>
-<p>Full dataset will be available in future versions</p>
+- Visual perception (segmentation, detection, OCR)
+- Spatio-temporal reasoning (change detection, Re-ID)
+- **Physics-aware modeling** (weather degradation & restoration)
 
-<p>👉 ScienceDB: Coming Soon</p>
-<p>👉 Download script: Coming Soon</p>
+This bridges three traditionally separated research areas into a **single unified benchmark**.
 
-<hr>
+---
 
-<h2>🙏 Acknowledgements</h2>
+### 3️⃣ Beyond Benchmark → **Real-World Deployment**
 
-<p>This dataset was <b>designed and led by the author</b>...</p>
+UAIV is not a purely academic dataset.
 
-<ul>
-<li><b>Xuzhou Transportation Control Group</b></li>
-<li><b></b>Multi-modal intelligence group(MIG), University of ElecUESTC</b></li>
-</ul>
+It has been:
 
-<hr>
+- **Deployed in real urban governance systems**
+- Used to build **21 domain-specific intelligent agents**
+- Supporting **large-scale regional monitoring platforms**
 
-<h2>📄 License</h2>
+This makes UAIV a rare dataset that connects:
 
-<p>MIT License</p>
+> **Data → Model → System → Real-world impact**
 
-</div>
+---
 
-</body>
-</html>
+## ✨ Highlights
+
+- **17B+ high-quality annotations**
+- **Cross-modal & cross-view alignment** (RGB / IR / metadata)
+- **Multi-weather paired data** for restoration (rain / snow / fog)
+- **Multi-temporal alignment** for change detection and Re-ID *(coming soon)*
+- **Flexible UAV acquisition**: multi-altitude, multi-route, repeated sampling
+- **Unified multi-task data paradigm** across perception, reasoning, and restoration
+- **Object-level and scene-level consistency modeling**
+
+---
+
+## 📊 Dataset Overview
+
+- **Scene diversity**: urban / rural / industrial / natural  
+- **Weather conditions**: sunny / rainy / foggy / snowy  
+- **Temporal coverage**: day / night  
+- **Metadata support**: GPS, timestamp, altitude, camera parameters  
+
+---
+
+## 🧩 Task Definitions
+
+---
+
+### 1. Scene Understanding
+
+**Tasks**
+- Scene classification  
+- Semantic segmentation  
+- Instance segmentation  
+- Object counting  
+- OCR  
+- Environment understanding  
+
+**Description**
+
+UAIV goes beyond conventional benchmarks by emphasizing **context-rich and governance-oriented perception**.
+
+Each sample corresponds to real-world scenarios such as:
+
+- Illegal construction
+- Open burning
+- Environmental pollution
+- Infrastructure monitoring
+
+With **multi-modal alignment and environmental diversity**, models must jointly reason about:
+
+- Object presence
+- Scene semantics
+- Environmental status
+
+---
+
+**Examples**
+
+<p align="center">
+  <img src="assets/agricultural+commercial.png" width="45%">
+  <img src="assets/burning+forest.png" width="45%">
+</p>
+<p align="center">
+  <img src="assets/counting.png" width="45%">
+  <img src="assets/dark+IR.png" width="45%">
+</p>
+
+---
+
+### 2. Spatio-Temporal Learning
+
+**Tasks**
+- Change detection  
+- Cross-time Re-ID  
+
+**Description**
+
+UAIV enables **long-term dynamic scene understanding** with aligned multi-temporal data.
+
+Models must distinguish:
+
+- **True semantic changes**
+- vs. **appearance variations** caused by weather or lighting
+
+It also introduces **cross-time Re-ID under extreme viewpoint and scale variations**, pushing identity learning beyond static settings.
+
+---
+
+**Examples**
+
+<p align="center">
+  <img src="assets/Change_detection.png" width="45%">
+  <img src="assets/re-id.png" width="45%">
+</p>
+
+---
+
+### 3. Physics-Aware Image Restoration
+
+**Tasks**
+- Rain / snow / fog removal  
+- Cross-weather image translation  
+- Weather-aware degradation modeling  
+
+**Description**
+
+UAIV provides **real-world weather-degraded data** with preserved physical consistency:
+
+- Atmospheric scattering  
+- Illumination variation  
+- Sensor response differences  
+
+This enables models to recover:
+
+> **Intrinsic scene properties instead of superficial appearance**
+
+Cross-modal signals (RGB–IR) further support **physically grounded restoration**.
+
+---
+
+**Examples**
+
+<p align="center">
+  <img src="assets/foggy.png" width="45%">
+  <img src="assets/haze&original.png" width="45%">
+</p>
+
+---
+
+## 🌍 Real-World Deployment & Significance
+
+UAIV has been deployed in **large-scale urban governance systems**, with Xuzhou as a pilot region.
+
+- Covers the **Huaihai Economic Zone**
+- Supports **21 intelligent agents**
+- Enables automated monitoring of:
+  - Construction
+  - Environment
+  - Infrastructure
+
+### Key Value
+
+- Robust perception under real-world complexity  
+- Reduced manual inspection cost  
+- Scalable decision-making support  
+
+> UAIV bridges the gap between **benchmark datasets and real-world AI systems**
+
+---
+
+## 🧪 Benchmark (Coming Soon)
+
+- Scene understanding  
+- Change detection  
+- Image restoration  
+
+---
+
+## 📥 Data Access
+
+- Open subset (~30%) will be released  
+- Full dataset will be available in future versions  
+
+👉 GitHub: https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset/tree/main  
+👉 Project Page: https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/  
+
+> Submitted to ScienceDB (Journal of Image and Graphics dataset track), currently under review.
+
+---
+
+## 🙏 Acknowledgements
+
+This dataset was **designed and led by the author**, covering:
+
+- Data acquisition  
+- Data organization  
+- Annotation design  
+
+We thank:
+
+- **Xuzhou Transportation Control Group**  
+- **Multi-modal Intelligence Group (MIG), UESTC**
+
+---
+
+## 📄 License
+
+MIT License
