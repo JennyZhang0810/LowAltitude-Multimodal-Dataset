@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/cover.png" width="90%">
+  <img src="assets/GITHUB.png" width="90%">
 </p>
 
 <h1 align="center">UAIV: A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence</h1>
