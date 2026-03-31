@@ -6,10 +6,11 @@
 
 <style>
 body {
-    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    background: #0d1117;
+    margin: 0;
+    background: radial-gradient(circle at top, #0d1117, #05070a);
     color: #e6edf3;
+    line-height: 1.7;
 }
 
 .container {
@@ -18,92 +19,90 @@ body {
     padding: 40px 20px;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
     text-align: center;
     padding: 80px 20px 40px;
-    background: radial-gradient(circle at top, #161b22, #0d1117);
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 52px;
     margin-bottom: 10px;
+    background: linear-gradient(90deg, #58a6ff, #79c0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .tagline {
+    font-size: 18px;
     color: #8b949e;
-    margin: 5px 0;
 }
 
 .hero img {
     width: 90%;
     border-radius: 16px;
     margin-top: 30px;
+    box-shadow: 0 0 40px rgba(88,166,255,0.2);
 }
 
-/* SECTION */
-.section {
+/* ===== TITLES ===== */
+h2 {
     margin-top: 70px;
-}
-
-.section h2 {
     border-left: 4px solid #58a6ff;
     padding-left: 12px;
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .grid {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .grid img {
     width: 45%;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
-/* CARD */
-.card-grid {
+.grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(88,166,255,0.3);
+}
+
+/* ===== CARDS ===== */
+.highlight-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .card {
-    background: #161b22;
+    background: linear-gradient(145deg, #161b22, #0f141a);
     padding: 20px;
     border-radius: 14px;
     border: 1px solid #30363d;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    border-color: #58a6ff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(88,166,255,0.15);
 }
 
-/* EMPHASIS */
-.highlight {
-    background: #161b22;
-    border-left: 4px solid #58a6ff;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 8px;
-}
-
-/* TEXT */
+/* ===== TEXT ===== */
 p {
     color: #c9d1d9;
 }
 
-ul {
-    color: #c9d1d9;
+.center {
+    text-align: center;
 }
 
-/* HR */
+/* ===== DIVIDER ===== */
 hr {
     border: none;
     border-top: 1px solid #30363d;
@@ -114,70 +113,32 @@ hr {
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
     <h1>UAIV</h1>
-    <div class="tagline">A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence</div>
-    <div class="tagline">Multi-scenario • Multi-modal • Multi-condition • Real-world UAV Intelligence</div>
+    <div class="tagline">
+        A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence
+    </div>
     <img src="assets/GITHUB.png">
 </div>
 
 <div class="container">
 
-<div class="section">
-<h2>🔥 Overview</h2>
+<!-- HIGHLIGHTS -->
+<h2>🔥 Highlights</h2>
 
-<p><b>UAIV</b> is a large-scale low-altitude multimodal dataset designed for urban intelligence.</p>
-
-<div class="highlight">
-Learning consistent representations across <b>modality, condition, and time</b>
-</div>
-
-<p>It enables unified modeling of perception, reasoning, and physics-aware restoration.</p>
-</div>
-
-<hr>
-
-<div class="section">
-<h2>🚀 What Makes UAIV Different</h2>
-
-<div class="card-grid">
-
-<div class="card">
-<b>Cross-Condition Alignment</b>
-<p>Aligned RGB–IR–metadata across weather, time, and viewpoints.</p>
-</div>
-
-<div class="card">
-<b>Unified Intelligence</b>
-<p>Perception + reasoning + physics in one dataset.</p>
-</div>
-
-<div class="card">
-<b>Real-World Deployment</b>
-<p>Validated in real urban governance systems.</p>
-</div>
-
-</div>
-</div>
-
-<hr>
-
-<div class="section">
-<h2>✨ Highlights</h2>
-
-<div class="card-grid">
-<div class="card">🚀 17B+ annotations</div>
-<div class="card">🌐 Cross-modal alignment</div>
-<div class="card">🌧 Multi-weather data</div>
-<div class="card">🕒 Multi-temporal</div>
-<div class="card">✈ UAV flexible acquisition</div>
+<div class="highlight-grid">
+<div class="card">🚀 17B+ high-quality annotations</div>
+<div class="card">🌐 Cross-modal alignment (RGB / IR / metadata)</div>
+<div class="card">🌧 Multi-weather paired data (rain / snow / fog)</div>
+<div class="card">🕒 Multi-temporal alignment</div>
+<div class="card">✈ Flexible UAV acquisition</div>
 <div class="card">🧠 Physics-aware modeling</div>
 </div>
-</div>
 
 <hr>
 
-<div class="section">
+<!-- VISUAL -->
 <h2>🔥 Visual Teaser</h2>
 
 <div class="grid">
@@ -189,47 +150,114 @@ Learning consistent representations across <b>modality, condition, and time</b>
 <img src="assets/mining+pollution.png">
 </div>
 
+<p class="center"><i>Multi-scenario • Multi-modal • Multi-condition • Real-world UAV Intelligence</i></p>
+
+<hr>
+
+<!-- OVERVIEW -->
+<h2>🔥 Overview</h2>
+
+<p><b>UAIV</b> is a large-scale low-altitude multimodal dataset designed for <b>urban intelligence and fine-grained governance analysis</b>.</p>
+
+<p>It focuses on <b>scene understanding, spatio-temporal reasoning, and physics-aware image restoration</b>, enabling models to learn <b>physically grounded representations</b> under real-world complexity.</p>
+
+<p>Unlike conventional UAV datasets, UAIV emphasizes:</p>
+
+<ul>
+<li><b>Cross-modal alignment</b> (RGB / IR / metadata)</li>
+<li><b>Cross-view consistency</b></li>
+<li><b>Cross-condition robustness</b> (weather / illumination / viewpoint)</li>
+</ul>
+
+<hr>
+
+<!-- TASKS -->
+<h2>🧩 Task Definitions</h2>
+
+<h3>1. Scene Understanding</h3>
+
+<ul>
+<li>Scene classification</li>
+<li>Semantic segmentation</li>
+<li>Instance segmentation</li>
+<li>Object counting</li>
+<li>OCR</li>
+<li>Environment understanding</li>
+</ul>
+
+<p>UAIV emphasizes <b>context-rich and governance-oriented perception</b>, enabling models to jointly reason about <b>objects, scenes, and environmental states</b>.</p>
+
+<div class="grid">
+<img src="assets/agricultural+commercial.png">
+<img src="assets/burning+forest.png">
+</div>
+
+<h3>2. Spatio-Temporal Learning</h3>
+
+<ul>
+<li>Change detection</li>
+<li>Cross-time Re-ID</li>
+</ul>
+
+<p>Supports <b>aligned multi-temporal data</b> across time, weather, and viewpoints, enabling models to distinguish <b>true semantic changes</b> from appearance variations.</p>
+
+<div class="grid">
+<img src="assets/Change_detection.png">
+<img src="assets/re-id.png">
+</div>
+
+<h3>3. Physics-Aware Image Restoration</h3>
+
+<p>Provides <b>real-world weather-degraded data</b> (rain, snow, fog, haze) with preserved physical consistency.</p>
+
+<p>Supports <b>multi-modal restoration (RGB–IR)</b> and <b>physically grounded enhancement</b>.</p>
+
+<div class="grid">
+<img src="assets/foggy.png">
+<img src="assets/haze&original.png">
 </div>
 
 <hr>
 
-<div class="section">
-<h2>🧩 Tasks</h2>
+<!-- APPLICATION -->
+<h2>🚀 Applications & Impact</h2>
 
-<h3>Scene Understanding</h3>
+<p>UAIV has been deployed in real-world urban governance systems in <b>Xuzhou</b>, covering large-scale regional monitoring.</p>
+
 <ul>
-<li>Segmentation / Detection / OCR</li>
+<li>Illegal construction detection</li>
+<li>Environmental monitoring</li>
+<li>Infrastructure assessment</li>
 </ul>
 
-<h3>Spatio-Temporal Learning</h3>
-<ul>
-<li>Change detection / Re-ID</li>
-</ul>
-
-<h3>Physics-Aware Restoration</h3>
-<ul>
-<li>Rain / Snow / Fog removal</li>
-</ul>
-
-</div>
+<p>It significantly improves <b>event detection accuracy</b> and reduces <b>manual inspection cost</b>.</p>
 
 <hr>
 
-<div class="section">
-<h2>🌍 Real-World Significance</h2>
-
-<p>Deployed in large-scale urban systems with 21 intelligent agents.</p>
-
-</div>
-
-<hr>
-
-<div class="section">
+<!-- DATA ACCESS -->
 <h2>📥 Data Access</h2>
 
-<p>GitHub / Project Page available</p>
+<p>Open subset (~30%) will be released</p>
+<p>Full dataset will be available in future versions</p>
 
-</div>
+<p>👉 GitHub: https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset</p>
+<p>👉 Project Page: https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/</p>
+
+<hr>
+
+<!-- ACK -->
+<h2>🙏 Acknowledgements</h2>
+
+<ul>
+<li><b>Xuzhou Transportation Control Group</b></li>
+<li><b>Multi-modal Intelligence Group (MIG), UESTC</b></li>
+</ul>
+
+<hr>
+
+<h2>📄 License</h2>
+
+<p>MIT License</p>
 
 </div>
 
