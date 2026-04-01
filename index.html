@@ -135,6 +135,39 @@ body {
     transform: translateY(-2px);
 }
 
+/* ===== BADGES ===== */
+.badges {
+    margin: 20px auto 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.badge-img {
+    height: 24px;
+}
+
+/* ===== AUTHOR BLOCK ===== */
+.authors {
+    margin: 24px auto 16px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #c9d1d9;
+    max-width: 800px;
+}
+
+.authors a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.affiliations {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin-top: 8px;
+}
+
 /* ===== TITLES ===== */
 h2 {
     font-size: 2rem;
@@ -332,16 +365,38 @@ li {
     </div>
 </div>
 
-<!-- HERO with updated visual -->
+<!-- HERO with updated visual and author info -->
 <div class="hero">
     <h1>UAIV</h1>
     <div class="tagline">Multi-scenario · Multi-modal · Multi-condition · Real-world UAV Intelligence</div>
+    
+    <!-- Badges -->
+    <div class="badges">
+        <img class="badge-img" src="https://img.shields.io/badge/Paper-Under%20Review-blue" alt="paper status">
+        <img class="badge-img" src="https://img.shields.io/badge/License-MIT-green" alt="license">
+        <img class="badge-img" src="https://img.shields.io/badge/Status-Partial%20Release-yellow" alt="status">
+        <img class="badge-img" src="https://img.shields.io/badge/Annotations-17B%2B-red" alt="annotations">
+        <img class="badge-img" src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="python">
+        <img class="badge-img" src="https://img.shields.io/badge/PyTorch-1.10%2B-orange" alt="pytorch">
+    </div>
+
+    <!-- Author block (matching README) -->
+    <div class="authors">
+        Jiening Zhang¹, Yangming Zhang¹, Pengwei Yang¹, Yupeng Gao¹, Xi Wu¹, Junyu Liu¹,<br>
+        Guoqing Wang¹,²*, Tianyu Li¹*, Yang Yang¹,²
+        <div class="affiliations">
+            ¹ School of Computer Science and Engineering, University of Electronic Science and Technology of China<br>
+            ² Sichuan Artificial Intelligence Institute<br>
+            * Corresponding authors
+        </div>
+    </div>
+
     <div class="buttons">
         <a class="btn" href="https://arxiv.org/abs/2504.00000" target="_blank">📄 Paper (Coming)</a>
         <a class="btn" href="https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset" target="_blank">💻 GitHub</a>
         <a class="btn" href="#">📦 Dataset (Preview)</a>
     </div>
-    <img src="assets/4.1_GIT.png" alt="UAIV teaser banner" onerror="this.src='assets/GITHUB.png'">
+    <img src="assets/4.2_GIT.png" alt="UAIV teaser banner" onerror="this.src='assets/GITHUB.png'">
 </div>
 
 <div class="container">
@@ -355,17 +410,16 @@ li {
         <img src="assets/mining+pollution.png" alt="mining pollution">
     </div>
 
-    <!-- HIGHLIGHTS (enriched) -->
+    <!-- HIGHLIGHTS (enriched, aligned with README) -->
     <h2 class="fade">🔥 Highlights</h2>
     <div class="highlight-grid fade">
         <div class="card">🚀 17B+ annotations</div>
-        <div class="card">🌐 RGB / IR cross-modal</div>
-        <div class="card">🌧 Multi-weather paired</div>
-        <div class="card">🕒 Multi-temporal alignment</div>
-        <div class="card">✈ Flexible UAV acquisition</div>
-        <div class="card">🧠 Physics-aware modeling</div>
-        <div class="card">🏙 Real governance deployment</div>
-        <div class="card">🔄 Cross-view consistency</div>
+        <div class="card">🌐 RGB / IR cross-modal alignment</div>
+        <div class="card">🌧 Multi-weather paired data (rain, snow, fog)</div>
+        <div class="card">🕒 Multi-temporal alignment (change detection & Re-ID)</div>
+        <div class="card">✈ Flexible UAV acquisition (multi-altitude, multi-route)</div>
+        <div class="card">🧠 Unified multi-task data paradigm</div>
+        <div class="card">🏙 Real-world urban governance deployment</div>
     </div>
 
     <hr>
