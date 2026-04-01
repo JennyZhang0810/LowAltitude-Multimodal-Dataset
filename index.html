@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>UAIV Dataset</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>UAIV: A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence</title>
+    
 <style>
 
 /* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    background: radial-gradient(circle at top, #0d1117, #05070a);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+    background: radial-gradient(circle at top, #0d1117, #030609);
     color: #e6edf3;
-    line-height: 1.7;
+    line-height: 1.65;
+    scroll-behavior: smooth;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
-    padding: 60px 20px;
+    padding: 40px 24px 80px;
 }
 
 /* ===== NAVBAR ===== */
@@ -27,27 +35,42 @@ body {
     top: 0;
     width: 100%;
     background: rgba(13,17,23,0.85);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid #30363d;
     z-index: 1000;
+    transition: 0.2s;
 }
 
 .navbar-inner {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
+    align-items: center;
+    padding: 14px 24px;
 }
 
-.navbar a {
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, #58a6ff, #a371f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links a {
     color: #c9d1d9;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.2s;
 }
 
-.navbar a:hover {
+.nav-links a:hover {
     color: #58a6ff;
+    border-bottom: 1px solid #58a6ff;
 }
 
 /* ===== HERO ===== */
@@ -57,110 +80,183 @@ body {
 }
 
 .hero h1 {
-    font-size: 56px;
-    background: linear-gradient(90deg, #58a6ff, #79c0ff);
+    font-size: 64px;
+    background: linear-gradient(120deg, #58a6ff, #79c0ff, #c084fc);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
 }
 
 .tagline {
     color: #8b949e;
-    font-size: 18px;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 12px auto 0;
+    font-weight: 400;
 }
 
 .hero img {
     width: 90%;
-    border-radius: 16px;
-    margin-top: 30px;
-    box-shadow: 0 0 50px rgba(88,166,255,0.2);
+    max-width: 1000px;
+    border-radius: 24px;
+    margin-top: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(88,166,255,0.2);
+    transition: 0.3s;
 }
 
 /* ===== BUTTONS ===== */
 .buttons {
-    margin-top: 25px;
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 18px;
-    margin: 5px;
-    border-radius: 8px;
+    padding: 10px 24px;
+    border-radius: 40px;
     border: 1px solid #30363d;
+    background: rgba(22,27,34,0.7);
     color: #e6edf3;
     text-decoration: none;
-    transition: 0.3s;
+    font-weight: 500;
+    transition: 0.25s;
+    backdrop-filter: blur(4px);
 }
 
 .btn:hover {
     background: #58a6ff;
-    color: #000;
+    color: #0d1117;
+    border-color: #58a6ff;
+    transform: translateY(-2px);
 }
 
 /* ===== TITLES ===== */
 h2 {
-    border-left: 4px solid #58a6ff;
-    padding-left: 12px;
-    margin-top: 70px;
+    font-size: 2rem;
+    font-weight: 600;
+    border-left: 5px solid #58a6ff;
+    padding-left: 18px;
+    margin: 64px 0 24px 0;
+    letter-spacing: -0.01em;
 }
 
-/* ===== GRID ===== */
+h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 40px 0 16px 0;
+    color: #e6edf3;
+    display: inline-block;
+    background: linear-gradient(90deg, #e6edf3, #b0c4ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 20px 0 8px;
+    color: #c9d1d9;
+}
+
+/* ===== GRID (image gallery) ===== */
 .grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 20px;
     justify-content: center;
-    margin-top: 20px;
+    margin: 28px 0 20px;
 }
 
 .grid img {
-    width: 45%;
-    border-radius: 10px;
-    transition: 0.3s;
+    width: calc(50% - 20px);
+    min-width: 240px;
+    border-radius: 16px;
+    transition: 0.25s ease;
+    border: 1px solid #2d3748;
+    background: #0a0c10;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 .grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(88,166,255,0.3);
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(88,166,255,0.25);
+    border-color: #58a6ff;
 }
 
 /* ===== CARDS ===== */
 .highlight-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    gap: 22px;
+    margin: 28px 0;
 }
 
 .card {
-    background: linear-gradient(145deg, #161b22, #0f141a);
-    padding: 20px;
-    border-radius: 14px;
-    border: 1px solid #30363d;
-    transition: 0.3s;
+    background: linear-gradient(145deg, #161b22, #0f1419);
+    padding: 20px 16px;
+    border-radius: 20px;
+    border: 1px solid #2d3748;
+    transition: all 0.25s;
+    text-align: center;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(88,166,255,0.2);
+    box-shadow: 0 20px 28px -12px rgba(88,166,255,0.3);
+    border-color: #58a6ff;
 }
 
 /* ===== PIPELINE ===== */
 .pipeline {
     text-align: center;
-    margin-top: 30px;
+    margin: 30px 0;
 }
 
 .pipeline img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 24px;
     border: 1px solid #30363d;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ===== STATS / MINI INFO ===== */
+.info-badge {
+    background: #0d1117;
+    border-radius: 28px;
+    padding: 18px 24px;
+    border: 1px solid #30363d;
+    margin: 28px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info-item {
+    flex: 1;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.info-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #58a6ff;
 }
 
 /* ===== ANIMATION ===== */
 .fade {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s ease;
+    transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 }
 
 .fade.show {
@@ -168,15 +264,54 @@ h2 {
     transform: translateY(0);
 }
 
-/* ===== DIVIDER ===== */
+/* ===== DIVIDER & MISC ===== */
 hr {
     border: none;
-    border-top: 1px solid #30363d;
-    margin: 60px 0;
+    border-top: 1px solid #2d3748;
+    margin: 56px 0;
 }
 
 .center {
     text-align: center;
+}
+
+.subnote {
+    color: #6e7681;
+    font-size: 0.9rem;
+    margin-top: 12px;
+}
+
+ul, .text-block {
+    margin: 16px 0 16px 24px;
+    color: #d4d9e2;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 780px) {
+    .container {
+        padding: 20px 16px 60px;
+    }
+    .hero h1 {
+        font-size: 44px;
+    }
+    .navbar-inner {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .nav-links a {
+        margin: 0 12px;
+        font-size: 0.85rem;
+    }
+    .grid img {
+        width: 100%;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
 }
 
 </style>
@@ -184,124 +319,203 @@ hr {
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
     <div class="navbar-inner">
-        <div><b>UAIV</b></div>
-        <div>
+        <div class="logo">UAIV</div>
+        <div class="nav-links">
             <a href="#overview">Overview</a>
             <a href="#tasks">Tasks</a>
             <a href="#pipeline">Pipeline</a>
+            <a href="#applications">Impact</a>
             <a href="#data">Data</a>
         </div>
     </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO with updated visual -->
 <div class="hero">
     <h1>UAIV</h1>
-    <div class="tagline">
-        A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence
-    </div>
-
+    <div class="tagline">Multi-scenario · Multi-modal · Multi-condition · Real-world UAV Intelligence</div>
     <div class="buttons">
-        <a class="btn" href="#">📄 Paper</a>
-        <a class="btn" href="https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset">💻 Code</a>
-        <a class="btn" href="#">📦 Dataset</a>
+        <a class="btn" href="https://arxiv.org/abs/2504.00000" target="_blank">📄 Paper (Coming)</a>
+        <a class="btn" href="https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset" target="_blank">💻 GitHub</a>
+        <a class="btn" href="#">📦 Dataset (Preview)</a>
     </div>
-
-    <img src="assets/GITHUB.png">
+    <img src="assets/4.1_GIT.png" alt="UAIV teaser banner" onerror="this.src='assets/GITHUB.png'">
 </div>
 
 <div class="container">
 
-<!-- HIGHLIGHTS -->
-<h2 class="fade">🔥 Highlights</h2>
+    <!-- 🔥 VISUAL TEASER (extra gallery) -->
+    <h2 class="fade">✨ Visual Teaser</h2>
+    <div class="grid fade">
+        <img src="assets/agricultural+commercial.png" alt="scene1">
+        <img src="assets/burning+forest.png" alt="scene2">
+        <img src="assets/dark+IR.png" alt="dark ir">
+        <img src="assets/mining+pollution.png" alt="mining pollution">
+    </div>
 
-<div class="highlight-grid fade">
-<div class="card">🚀 17B+ annotations</div>
-<div class="card">🌐 Cross-modal (RGB / IR)</div>
-<div class="card">🌧 Multi-weather pairing</div>
-<div class="card">🕒 Multi-temporal alignment</div>
-<div class="card">✈ UAV flexible acquisition</div>
-<div class="card">🧠 Physics-aware modeling</div>
-</div>
+    <!-- HIGHLIGHTS (enriched) -->
+    <h2 class="fade">🔥 Highlights</h2>
+    <div class="highlight-grid fade">
+        <div class="card">🚀 17B+ annotations</div>
+        <div class="card">🌐 RGB / IR cross-modal</div>
+        <div class="card">🌧 Multi-weather paired</div>
+        <div class="card">🕒 Multi-temporal alignment</div>
+        <div class="card">✈ Flexible UAV acquisition</div>
+        <div class="card">🧠 Physics-aware modeling</div>
+        <div class="card">🏙 Real governance deployment</div>
+        <div class="card">🔄 Cross-view consistency</div>
+    </div>
 
-<hr>
+    <hr>
 
-<!-- OVERVIEW -->
-<h2 id="overview" class="fade">🔥 Overview</h2>
+    <!-- OVERVIEW section (full) -->
+    <h2 id="overview" class="fade">📖 Overview</h2>
+    <p class="fade"><strong>UAIV</strong> is a large-scale low-altitude multimodal dataset designed for <strong>urban intelligence and fine-grained governance analysis</strong>, with a strong focus on scene understanding, spatio-temporal reasoning, and physics-aware image restoration. Unlike conventional UAV datasets, UAIV emphasizes:</p>
+    <ul class="fade">
+        <li><strong>Cross-modal alignment</strong> (RGB / IR / metadata)</li>
+        <li><strong>Cross-view consistency</strong> across altitudes and trajectories</li>
+        <li><strong>Cross-condition robustness</strong> (weather, illumination, viewpoint)</li>
+    </ul>
+    <p class="fade">The dataset is built upon a self-operated UAV acquisition system, covering long-term, large-scale real urban environments with strong diversity in scene types (urban/rural/industrial/natural), illumination (day/night), weather (rain/snow/fog/haze), and flight altitudes.</p>
 
-<p class="fade">
-UAIV is designed for real-world urban intelligence, enabling models to learn robust representations across
-<b>weather, time, and viewpoints</b>, with strong emphasis on <b>physical consistency</b>.
-</p>
+    <!-- Dataset stats quick view -->
+    <div class="info-badge fade">
+        <div class="info-item"><div class="info-number">17B+</div><div>Annotations</div></div>
+        <div class="info-item"><div class="info-number">RGB+IR</div><div>Paired Modalities</div></div>
+        <div class="info-item"><div class="info-number">4+</div><div>Weather Conditions</div></div>
+        <div class="info-item"><div class="info-number">Multi-altitude</div><div>Flexible Routes</div></div>
+    </div>
 
-<hr>
+    <hr>
 
-<!-- PIPELINE -->
-<h2 id="pipeline" class="fade">🧠 Dataset Pipeline</h2>
+    <!-- DATASET PIPELINE -->
+    <h2 id="pipeline" class="fade">🧠 Dataset Pipeline</h2>
+    <div class="pipeline fade">
+        <img src="assets/pipeline.png" alt="pipeline diagram">
+        <p class="center subnote">UAV acquisition → multi-modal alignment → annotation → multi-task learning</p>
+    </div>
 
-<div class="pipeline fade">
-<img src="assets/pipeline.png">
-<p class="center"><i>UAV acquisition → multi-modal alignment → annotation → multi-task learning</i></p>
-</div>
+    <hr>
 
-<hr>
+    <!-- TASK DEFINITIONS (DETAILED) -->
+    <h2 id="tasks" class="fade">🧩 Task Definitions</h2>
 
-<!-- TASKS -->
-<h2 id="tasks" class="fade">🧩 Task Definitions</h2>
+    <!-- 1. Scene Understanding -->
+    <h3 class="fade">1. Scene Understanding</h3>
+    <p class="fade"><strong>Tasks:</strong> Scene classification, semantic/instance segmentation, object counting, OCR, environment understanding.</p>
+    <p class="fade">UAIV emphasizes <strong>context-rich and governance-oriented perception</strong>. Each sample corresponds to real urban governance scenarios: illegal construction, open burning, environmental pollution, infrastructure monitoring. Aligned multi-modal signals (RGB, IR, metadata) enable joint reasoning about object presence, scene semantics, and environmental status.</p>
+    <div class="grid fade">
+        <img src="assets/agricultural+commercial.png" alt="agri commercial">
+        <img src="assets/burning+forest.png" alt="burning forest">
+        <img src="assets/counting.png" alt="counting">
+        <img src="assets/dark+IR.png" alt="dark IR">
+        <img src="assets/excavator+fire.png" alt="excavator fire">
+        <img src="assets/farmland+excavation.png" alt="farmland excavation">
+        <img src="assets/lake+forest.png" alt="lake forest">
+        <img src="assets/mining+pollution.png" alt="mining pollution">
+        <img src="assets/OCR.png" alt="OCR example">
+        <img src="assets/river_pollution.png" alt="river pollution">
+    </div>
 
-<h3 class="fade">1. Scene Understanding</h3>
-<div class="grid fade">
-<img src="assets/agricultural+commercial.png">
-<img src="assets/burning+forest.png">
-</div>
+    <!-- 2. Spatio-Temporal Learning -->
+    <h3 class="fade">2. Spatio-Temporal Learning</h3>
+    <p class="fade"><strong>Tasks:</strong> Change detection, cross-time Re-ID.</p>
+    <p class="fade">UAIV provides <strong>strictly aligned multi-temporal data</strong> across different time spans, flight routes, and environmental conditions. For change detection, it distinguishes true semantic changes from appearance variations (illumination/weather). Cross-time Re-ID enables identity-consistent learning under viewpoint and altitude shifts.</p>
+    <div class="grid fade">
+        <img src="assets/Change_detection.png" alt="change detection">
+        <img src="assets/re-id.png" alt="re-id sample">
+    </div>
 
-<h3 class="fade">2. Spatio-Temporal Learning</h3>
-<div class="grid fade">
-<img src="assets/Change_detection.png">
-<img src="assets/re-id.png">
-</div>
+    <!-- 3. Physics-Aware Restoration -->
+    <h3 class="fade">3. Physics-Aware Image Restoration</h3>
+    <p class="fade"><strong>Tasks:</strong> Rain/snow/fog removal, cross-weather translation, weather-aware degradation modeling.</p>
+    <p class="fade">Real-world paired/unpaired weather-degraded data (rain, snow, fog, haze) captured under consistent UAV trajectories. Preserves physical consistency: illumination variation, atmospheric scattering, sensor response differences. Enables recovery of intrinsic scene properties rather than only appearance translation.</p>
+    <div class="grid fade">
+        <img src="assets/foggy.png" alt="foggy scene">
+        <img src="assets/haze&original.png" alt="haze original">
+        <img src="assets/rainy.png" alt="rainy">
+        <img src="assets/snowy.png" alt="snowy">
+    </div>
 
-<h3 class="fade">3. Physics-Aware Restoration</h3>
-<div class="grid fade">
-<img src="assets/foggy.png">
-<img src="assets/haze&original.png">
-</div>
+    <hr>
 
-<hr>
+    <!-- APPLICATIONS & REAL-WORLD IMPACT -->
+    <h2 id="applications" class="fade">🚀 Applications & Real‑World Impact</h2>
+    <p class="fade">UAIV has been deployed in <strong>real-world urban governance systems</strong> using <strong>Xuzhou (Jiangsu Province, China)</strong> as a pilot region, achieving full coverage of the Huaihai Economic Zone. Based on UAIV, we developed:</p>
+    <ul class="fade">
+        <li><strong>21 domain-specific intelligent agents</strong> for urban governance</li>
+        <li>A <strong>regional integrated government service platform</strong></li>
+    </ul>
+    <p class="fade">The system supports automated analysis for illegal construction detection, environmental anomaly monitoring, infrastructure status assessment, leading to significant improvement in semantic understanding under complex conditions, enhanced event detection accuracy, reduced manual inspection costs, and faster decision-making.</p>
+    <div class="card fade" style="margin: 20px 0; background: #0f141a;">
+        <p><strong>📢 User Feedback:</strong> “UAIV provides strong coverage of complex real-world scenarios, robust representation of multi-scale objects, and high-quality semantic consistency — a reliable foundation for large-scale model training and deployment.”</p>
+    </div>
 
-<!-- DATA -->
-<h2 id="data" class="fade">📥 Data Access</h2>
+    <hr>
 
-<p class="fade">Open subset (~30%) coming soon</p>
-<p class="fade">Full dataset release in future versions</p>
+    <!-- DETAILED DATASET DESCRIPTION -->
+    <h2 class="fade">📊 Dataset Description (Detailed)</h2>
+    <p class="fade">UAIV is a large-scale multimodal dataset designed for <strong>urban fine-grained governance and low-altitude remote sensing intelligence</strong>.</p>
+    <ul class="fade">
+        <li>Total scale: <strong>17B+ annotations</strong> built from long-term UAV data collection.</li>
+        <li>Covers high-resolution, multi-scale, and dynamic environments.</li>
+        <li>Systematically supports illegal construction detection, environmental monitoring, traffic infrastructure analysis, construction activity understanding.</li>
+        <li>Integrates change detection, weather-degraded restoration, and Re-ID.</li>
+        <li>Forms a unified cross-task and cross-modal data paradigm with high-quality image–semantic alignment.</li>
+    </ul>
 
-<hr>
+    <!-- Benchmark coming soon -->
+    <h2 class="fade">🧪 Benchmark (Coming Soon)</h2>
+    <p class="fade">Standardized benchmarks and baselines for scene understanding, change detection, and image restoration will be released in future versions.</p>
 
-<!-- FOOTER -->
-<p class="center fade">MIT License • UAIV Project</p>
+    <hr>
+
+    <!-- DATA ACCESS (full) -->
+    <h2 id="data" class="fade">📥 Data Access</h2>
+    <p class="fade"><strong>Current status:</strong> Partially released · Open subset (~30%) coming soon.<br>
+    Full dataset will be available in future versions.</p>
+    <p class="fade">👉 GitHub: <a href="https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset" target="_blank" style="color:#58a6ff;">https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset</a><br>
+    👉 Project Page: <a href="https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/" target="_blank" style="color:#58a6ff;">https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/</a></p>
+    <p class="fade subnote">📌 The dataset has been submitted to <strong>ScienceDB (Journal of Image and Graphics dataset track)</strong> and is currently under review. The official data access link will be released after acceptance.</p>
+
+    <hr>
+
+    <!-- ACKNOWLEDGEMENTS -->
+    <h2 class="fade">🙏 Acknowledgements</h2>
+    <p class="fade">This dataset was designed and led by the author, covering the full pipeline of data acquisition, organization, and annotation system design. We sincerely thank:</p>
+    <ul class="fade">
+        <li><strong>Xuzhou Transportation Control Group</strong> for large-scale UAV data acquisition support.</li>
+        <li><strong>Multi-modal Intelligence Group (MIG) at UESTC</strong> led by Professor Guoqing Wang and Professor Yang Yang for valuable collaboration and technical support.</li>
+    </ul>
+
+    <hr>
+
+    <!-- LICENSE -->
+    <div class="center fade">
+        <p>📄 <strong>MIT License</strong> · UAIV Project · Open for Research & Industrial Collaboration</p>
+        <p style="font-size: 0.85rem; margin-top: 12px;">© 2025 UAIV Team | Low-Altitude Urban Intelligence Dataset</p>
+    </div>
 
 </div>
 
 <!-- JS ANIMATION -->
 <script>
-const elements = document.querySelectorAll('.fade');
-
-function showOnScroll() {
-    const trigger = window.innerHeight * 0.85;
-
-    elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < trigger) {
-            el.classList.add('show');
-        }
-    });
-}
-
-window.addEventListener('scroll', showOnScroll);
-showOnScroll();
+    const fadeElements = document.querySelectorAll('.fade');
+    function checkFade() {
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.85;
+        fadeElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < triggerPoint) {
+                el.classList.add('show');
+            }
+        });
+    }
+    window.addEventListener('scroll', checkFade);
+    window.addEventListener('resize', checkFade);
+    checkFade();
 </script>
 
 </body>
