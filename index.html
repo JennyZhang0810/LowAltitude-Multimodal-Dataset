@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>UAIV: A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence</title>
-    
+
+<!-- Preconnect to external origins for faster badge loading -->
+<link rel="preconnect" href="https://img.shields.io">
+<link rel="preconnect" href="https://github.com">
+
 <style>
 
 /* ===== GLOBAL ===== */
@@ -17,16 +21,37 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
-    background: radial-gradient(circle at top, #0d1117, #030609);
+    background: radial-gradient(circle at 30% 20%, #0a0f1a, #020408);
     color: #e6edf3;
     line-height: 1.65;
     scroll-behavior: smooth;
+    position: relative;
+}
+
+/* Animated gradient background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 40% 60%, rgba(88,166,255,0.08), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: bgPulse 20s ease infinite;
+}
+
+@keyframes bgPulse {
+    0% { opacity: 0.3; transform: scale(1);}
+    50% { opacity: 0.7; transform: scale(1.05);}
+    100% { opacity: 0.3; transform: scale(1);}
 }
 
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 40px 24px 80px;
+    padding: 20px 24px 80px;
 }
 
 /* ===== NAVBAR ===== */
@@ -34,11 +59,16 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(13,17,23,0.85);
+    background: rgba(13,17,23,0.7);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid rgba(48,54,61,0.6);
     z-index: 1000;
-    transition: 0.2s;
+    transition: 0.3s;
+}
+
+.navbar.scrolled {
+    background: rgba(13,17,23,0.95);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .navbar-inner {
@@ -52,31 +82,48 @@ body {
 
 .logo {
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     background: linear-gradient(135deg, #58a6ff, #a371f7);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
 }
 
 .nav-links a {
     color: #c9d1d9;
     text-decoration: none;
-    margin-left: 24px;
+    margin-left: 28px;
     font-size: 0.95rem;
     font-weight: 500;
     transition: 0.2s;
+    position: relative;
 }
 
 .nav-links a:hover {
     color: #58a6ff;
-    border-bottom: 1px solid #58a6ff;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #58a6ff;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* ===== HERO ===== */
 .hero {
     text-align: center;
     padding: 140px 20px 30px;
+    position: relative;
 }
 
 .hero h1 {
@@ -87,6 +134,7 @@ body {
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.02em;
     margin-bottom: 12px;
+    animation: fadeUp 0.8s ease-out;
 }
 
 .tagline {
@@ -95,15 +143,22 @@ body {
     max-width: 700px;
     margin: 12px auto 0;
     font-weight: 400;
+    animation: fadeUp 0.8s ease-out 0.1s both;
 }
 
 .hero img {
     width: 90%;
     max-width: 1000px;
-    border-radius: 24px;
-    margin-top: 40px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(88,166,255,0.2);
-    transition: 0.3s;
+    border-radius: 28px;
+    margin-top: 48px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.5), 0 0 0 1px rgba(88,166,255,0.3);
+    transition: 0.4s ease;
+    animation: fadeUp 0.8s ease-out 0.2s both;
+}
+
+.hero img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 30px 55px rgba(88,166,255,0.2), 0 0 0 1px #58a6ff;
 }
 
 /* ===== BUTTONS ===== */
@@ -111,16 +166,17 @@ body {
     margin-top: 28px;
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 18px;
     flex-wrap: wrap;
+    animation: fadeUp 0.8s ease-out 0.15s both;
 }
 
 .btn {
     display: inline-block;
-    padding: 10px 24px;
+    padding: 10px 26px;
     border-radius: 40px;
     border: 1px solid #30363d;
-    background: rgba(22,27,34,0.7);
+    background: rgba(22,27,34,0.6);
     color: #e6edf3;
     text-decoration: none;
     font-weight: 500;
@@ -132,7 +188,8 @@ body {
     background: #58a6ff;
     color: #0d1117;
     border-color: #58a6ff;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(88,166,255,0.3);
 }
 
 /* ===== BADGES ===== */
@@ -142,20 +199,18 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
+    animation: fadeUp 0.6s ease-out;
 }
 
 .badge-img {
     height: 24px !important;
     width: auto !important;
     display: inline-block !important;
+    transition: transform 0.2s;
 }
 
-.card {
-    transition: all 0.3s ease;
-}
-.card:hover {
-    box-shadow: 0 0 20px rgba(88,166,255,0.3);
-    border-color: #58a6ff;
+.badge-img:hover {
+    transform: translateY(-2px);
 }
 
 /* ===== AUTHOR BLOCK ===== */
@@ -165,11 +220,7 @@ body {
     line-height: 1.5;
     color: #c9d1d9;
     max-width: 800px;
-}
-
-.authors a {
-    color: #58a6ff;
-    text-decoration: none;
+    animation: fadeUp 0.8s ease-out 0.05s both;
 }
 
 .affiliations {
@@ -186,6 +237,7 @@ h2 {
     padding-left: 18px;
     margin: 64px 0 24px 0;
     letter-spacing: -0.01em;
+    position: relative;
 }
 
 h3 {
@@ -200,14 +252,7 @@ h3 {
     -webkit-text-fill-color: transparent;
 }
 
-h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 20px 0 8px;
-    color: #c9d1d9;
-}
-
-/* ===== GRID (image gallery) ===== */
+/* ===== GRID ===== */
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -219,16 +264,16 @@ h4 {
 .grid img {
     width: calc(50% - 20px);
     min-width: 240px;
-    border-radius: 16px;
-    transition: 0.25s ease;
+    border-radius: 20px;
+    transition: 0.3s ease;
     border: 1px solid #2d3748;
     background: #0a0c10;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .grid img:hover {
     transform: scale(1.02);
-    box-shadow: 0 12px 24px rgba(88,166,255,0.25);
+    box-shadow: 0 15px 30px rgba(88,166,255,0.2);
     border-color: #58a6ff;
 }
 
@@ -243,12 +288,29 @@ h4 {
 .card {
     background: linear-gradient(145deg, #161b22, #0f1419);
     padding: 20px 16px;
-    border-radius: 20px;
+    border-radius: 24px;
     border: 1px solid #2d3748;
-    transition: all 0.25s;
+    transition: all 0.3s ease;
     text-align: center;
     font-weight: 500;
     backdrop-filter: blur(2px);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(88,166,255,0.1), transparent);
+    transition: left 0.6s;
+}
+
+.card:hover::before {
+    left: 100%;
 }
 
 .card:hover {
@@ -268,19 +330,26 @@ h4 {
     border-radius: 24px;
     border: 1px solid #30363d;
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
 }
 
-/* ===== STATS / MINI INFO ===== */
+.pipeline img:hover {
+    transform: scale(1.01);
+    border-color: #58a6ff;
+}
+
+/* ===== STATS ===== */
 .info-badge {
-    background: #0d1117;
-    border-radius: 28px;
-    padding: 18px 24px;
+    background: rgba(13,17,23,0.6);
+    border-radius: 32px;
+    padding: 24px 28px;
     border: 1px solid #30363d;
     margin: 28px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+    backdrop-filter: blur(4px);
 }
 
 .info-item {
@@ -293,6 +362,7 @@ h4 {
     font-size: 2.2rem;
     font-weight: 700;
     color: #58a6ff;
+    letter-spacing: -0.5px;
 }
 
 /* ===== ANIMATION ===== */
@@ -307,7 +377,80 @@ h4 {
     transform: translateY(0);
 }
 
-/* ===== DIVIDER & MISC ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== BACK TO TOP ===== */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #58a6ff;
+    color: #0d1117;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border: none;
+    font-size: 1.4rem;
+    z-index: 99;
+}
+
+#back-to-top.show-btn {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    background: #79c0ff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 780px) {
+    .container {
+        padding: 20px 16px 60px;
+    }
+    .hero h1 {
+        font-size: 44px;
+    }
+    .navbar-inner {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .nav-links a {
+        margin: 0 12px;
+        font-size: 0.85rem;
+    }
+    .grid img {
+        width: 100%;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
 hr {
     border: none;
     border-top: 1px solid #2d3748;
@@ -333,30 +476,6 @@ li {
     margin: 8px 0;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 780px) {
-    .container {
-        padding: 20px 16px 60px;
-    }
-    .hero h1 {
-        font-size: 44px;
-    }
-    .navbar-inner {
-        flex-direction: column;
-        gap: 8px;
-    }
-    .nav-links a {
-        margin: 0 12px;
-        font-size: 0.85rem;
-    }
-    .grid img {
-        width: 100%;
-    }
-    h2 {
-        font-size: 1.7rem;
-    }
-}
-
 </style>
 </head>
 
@@ -375,7 +494,7 @@ li {
     </div>
 </div>
 
-<!-- HERO with updated visual and author info -->
+<!-- HERO -->
 <div class="hero">
     <h1>UAIV</h1>
     <div class="tagline">Multi-scenario · Multi-modal · Multi-condition · Real-world UAV Intelligence</div>
@@ -390,7 +509,7 @@ li {
         <img class="badge-img" src="https://img.shields.io/badge/PyTorch-1.10%2B-orange" alt="pytorch">
     </div>
 
-    <!-- Author block (matching README) -->
+    <!-- Author block -->
     <div class="authors">
         Jiening Zhang¹, Yangming Zhang¹, Pengwei Yang¹, Yupeng Gao¹, Xi Wu¹, Junyu Liu¹,<br>
         Guoqing Wang¹,²*, Tianyu Li¹*, Yang Yang¹,²
@@ -404,14 +523,14 @@ li {
     <div class="buttons">
         <a class="btn" href="https://arxiv.org/abs/2504.00000" target="_blank">📄 Paper (Coming)</a>
         <a class="btn" href="https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset" target="_blank">💻 GitHub</a>
-        <a class="btn" href="#">📦 Dataset (Preview)</a>
+        <a class="btn" href="https://www.scidb.cn/detail?dataSetId=203705443be44f7882bb9ddfd7d401da" target="_blank">📦 Download Dataset</a>
     </div>
-    <img src="assets/4.2_GIT.png" alt="UAIV teaser banner" onerror="this.src='assets/GITHUB.png'">
+    <img src="assets/4.2_GIT.png" alt="UAIV teaser banner" fetchpriority="high" onerror="this.src='assets/GITHUB.png'">
 </div>
 
 <div class="container">
 
-    <!-- 🔥 VISUAL TEASER (extra gallery) -->
+    <!-- Visual Teaser -->
     <h2 class="fade">✨ Visual Teaser</h2>
     <div class="grid fade">
         <img src="assets/agricultural+commercial.png" loading="lazy" alt="scene1">
@@ -420,7 +539,7 @@ li {
         <img src="assets/mining+pollution.png" loading="lazy" alt="mining pollution">
     </div>
 
-    <!-- HIGHLIGHTS (enriched, aligned with README) -->
+    <!-- Highlights -->
     <h2 class="fade">🔥 Highlights</h2>
     <div class="highlight-grid fade">
         <div class="card">🚀 17B+ annotations</div>
@@ -434,7 +553,7 @@ li {
 
     <hr>
 
-    <!-- OVERVIEW section (full) -->
+    <!-- Overview -->
     <h2 id="overview" class="fade">📖 Overview</h2>
     <p class="fade"><strong>UAIV</strong> is a large-scale low-altitude multimodal dataset designed for <strong>urban intelligence and fine-grained governance analysis</strong>, with a strong focus on scene understanding, spatio-temporal reasoning, and physics-aware image restoration. Unlike conventional UAV datasets, UAIV emphasizes:</p>
     <ul class="fade">
@@ -444,7 +563,7 @@ li {
     </ul>
     <p class="fade">The dataset is built upon a self-operated UAV acquisition system, covering long-term, large-scale real urban environments with strong diversity in scene types (urban/rural/industrial/natural), illumination (day/night), weather (rain/snow/fog/haze), and flight altitudes.</p>
 
-    <!-- Dataset stats quick view -->
+    <!-- Stats -->
     <div class="info-badge fade">
         <div class="info-item"><div class="info-number">17B+</div><div>Annotations</div></div>
         <div class="info-item"><div class="info-number">RGB+IR</div><div>Paired Modalities</div></div>
@@ -454,7 +573,7 @@ li {
 
     <hr>
 
-    <!-- DATASET PIPELINE -->
+    <!-- Pipeline -->
     <h2 id="pipeline" class="fade">🧠 Dataset Pipeline</h2>
     <div class="pipeline fade">
         <img src="assets/pipeline.png" loading="lazy" alt="pipeline diagram">
@@ -463,10 +582,9 @@ li {
 
     <hr>
 
-    <!-- TASK DEFINITIONS (DETAILED) -->
+    <!-- Task Definitions -->
     <h2 id="tasks" class="fade">🧩 Task Definitions</h2>
 
-    <!-- 1. Scene Understanding -->
     <h3 class="fade">1. Scene Understanding</h3>
     <p class="fade"><strong>Tasks:</strong> Scene classification, semantic/instance segmentation, object counting, OCR, environment understanding.</p>
     <p class="fade">UAIV emphasizes <strong>context-rich and governance-oriented perception</strong>. Each sample corresponds to real urban governance scenarios: illegal construction, open burning, environmental pollution, infrastructure monitoring. Aligned multi-modal signals (RGB, IR, metadata) enable joint reasoning about object presence, scene semantics, and environmental status.</p>
@@ -483,7 +601,6 @@ li {
         <img src="assets/river_pollution.png" loading="lazy" alt="river pollution">
     </div>
 
-    <!-- 2. Spatio-Temporal Learning -->
     <h3 class="fade">2. Spatio-Temporal Learning</h3>
     <p class="fade"><strong>Tasks:</strong> Change detection, cross-time Re-ID.</p>
     <p class="fade">UAIV provides <strong>strictly aligned multi-temporal data</strong> across different time spans, flight routes, and environmental conditions. For change detection, it distinguishes true semantic changes from appearance variations (illumination/weather). Cross-time Re-ID enables identity-consistent learning under viewpoint and altitude shifts.</p>
@@ -492,7 +609,6 @@ li {
         <img src="assets/re-id.png" loading="lazy" alt="re-id sample">
     </div>
 
-    <!-- 3. Physics-Aware Restoration -->
     <h3 class="fade">3. Physics-Aware Image Restoration</h3>
     <p class="fade"><strong>Tasks:</strong> Rain/snow/fog removal, cross-weather translation, weather-aware degradation modeling.</p>
     <p class="fade">Real-world paired/unpaired weather-degraded data (rain, snow, fog, haze) captured under consistent UAV trajectories. Preserves physical consistency: illumination variation, atmospheric scattering, sensor response differences. Enables recovery of intrinsic scene properties rather than only appearance translation.</p>
@@ -505,7 +621,7 @@ li {
 
     <hr>
 
-    <!-- APPLICATIONS & REAL-WORLD IMPACT -->
+    <!-- Applications -->
     <h2 id="applications" class="fade">🚀 Applications & Real‑World Impact</h2>
     <p class="fade">UAIV has been deployed in <strong>real-world urban governance systems</strong> using <strong>Xuzhou (Jiangsu Province, China)</strong> as a pilot region, achieving full coverage of the Huaihai Economic Zone. Based on UAIV, we developed:</p>
     <ul class="fade">
@@ -519,7 +635,7 @@ li {
 
     <hr>
 
-    <!-- DETAILED DATASET DESCRIPTION -->
+    <!-- Dataset Description -->
     <h2 class="fade">📊 Dataset Description (Detailed)</h2>
     <p class="fade">UAIV is a large-scale multimodal dataset designed for <strong>urban fine-grained governance and low-altitude remote sensing intelligence</strong>.</p>
     <ul class="fade">
@@ -530,23 +646,24 @@ li {
         <li>Forms a unified cross-task and cross-modal data paradigm with high-quality image–semantic alignment.</li>
     </ul>
 
-    <!-- Benchmark coming soon -->
+    <!-- Benchmark -->
     <h2 class="fade">🧪 Benchmark (Coming Soon)</h2>
     <p class="fade">Standardized benchmarks and baselines for scene understanding, change detection, and image restoration will be released in future versions.</p>
 
     <hr>
 
-    <!-- DATA ACCESS (full) -->
+    <!-- Data Access (UPDATED) -->
     <h2 id="data" class="fade">📥 Data Access</h2>
-    <p class="fade"><strong>Current status:</strong> Partially released · Open subset (~30%) coming soon.<br>
-    Full dataset will be available in future versions.</p>
-    <p class="fade">👉 GitHub: <a href="https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset" target="_blank" style="color:#58a6ff;">https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset</a><br>
-    👉 Project Page: <a href="https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/" target="_blank" style="color:#58a6ff;">https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/</a></p>
-    <p class="fade subnote">📌 The dataset has been submitted to <strong>ScienceDB (Journal of Image and Graphics dataset track)</strong> and is currently under review. The official data access link will be released after acceptance.</p>
+    <p class="fade"><strong>Current status:</strong> Partially released · Open subset (~30%) available now.<br>
+    Full dataset will be released in future versions.</p>
+    <p class="fade">👉 <strong>ScienceDB</strong> (official release): <a href="https://www.scidb.cn/detail?dataSetId=203705443be44f7882bb9ddfd7d401da" target="_blank" style="color:#58a6ff;">https://www.scidb.cn/detail?dataSetId=203705443be44f7882bb9ddfd7d401da</a><br>
+    👉 <strong>GitHub</strong>: <a href="https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset" target="_blank" style="color:#58a6ff;">https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset</a><br>
+    👉 <strong>Project Page</strong>: <a href="https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/" target="_blank" style="color:#58a6ff;">https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/</a></p>
+    <p class="fade subnote">📌 The dataset is officially released on ScienceDB. Please use the ScienceDB link for data download.</p>
 
     <hr>
 
-    <!-- ACKNOWLEDGEMENTS -->
+    <!-- Acknowledgements -->
     <h2 class="fade">🙏 Acknowledgements</h2>
     <p class="fade">This dataset was designed and led by the author, covering the full pipeline of data acquisition, organization, and annotation system design. We sincerely thank:</p>
     <ul class="fade">
@@ -556,7 +673,7 @@ li {
 
     <hr>
 
-    <!-- LICENSE -->
+    <!-- License -->
     <div class="center fade">
         <p>📄 <strong>MIT License</strong> · UAIV Project · Open for Research & Industrial Collaboration</p>
         <p style="font-size: 0.85rem; margin-top: 12px;">© 2025 UAIV Team | Low-Altitude Urban Intelligence Dataset</p>
@@ -564,8 +681,22 @@ li {
 
 </div>
 
-<!-- JS ANIMATION -->
+<!-- Back to Top Button -->
+<div id="back-to-top" title="Back to top">↑</div>
+
+<!-- JS: Navbar scroll effect, fade animation, back-to-top -->
 <script>
+    // Navbar background change on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Fade animation
     const fadeElements = document.querySelectorAll('.fade');
     function checkFade() {
         const windowHeight = window.innerHeight;
@@ -580,6 +711,19 @@ li {
     window.addEventListener('scroll', checkFade);
     window.addEventListener('resize', checkFade);
     checkFade();
+
+    // Back to top button
+    const backBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backBtn.classList.add('show-btn');
+        } else {
+            backBtn.classList.remove('show-btn');
+        }
+    });
+    backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 </script>
 
 </body>
