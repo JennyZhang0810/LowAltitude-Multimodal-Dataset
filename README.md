@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/GITHUB.png" width="90%">
+  <img src="assets/4.1_GIT.png" width="80%">
 </p>
 
 <h1 align="center">UAIV: A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence</h1>
@@ -319,7 +319,7 @@ This dataset was **designed and led by the author**, covering the full pipeline 
 We sincerely thank:
 
 - **Xuzhou Transportation Control Group** for large-scale UAV data acquisition support  
-- **Multi-modal Intelligence Group (MIG), UESTC** for valuable collaboration and technical support  
+- **Multi-modal Intelligence Group (MIG) at UESTC led by Professor Guoqing Wang and Professor YangYang** for valuable collaboration and technical support  
 
 ---
 
