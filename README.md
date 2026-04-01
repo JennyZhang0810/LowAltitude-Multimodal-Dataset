@@ -217,10 +217,11 @@ We will provide standardized benchmarks and baselines for:
 - Open subset (~30%) will be released  
 - Full dataset will be available in future versions  
 
-👉 GitHub: [https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset/tree/main](https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset/tree/main)  
-👉 Project Page: [https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/](https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/)
+👉 **ScienceDB**: [https://www.scidb.cn/detail?dataSetId=203705443be44f7882bb9ddfd7d401da](https://www.scidb.cn/detail?dataSetId=203705443be44f7882bb9ddfd7d401da)  
+👉 **GitHub**: [https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset/tree/main](https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset/tree/main)  
+👉 **Project Page**: [https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/](https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/)
 
-> **Note**: The dataset has been submitted to **ScienceDB (Journal of Image and Graphics dataset track)** and is currently under review. The official data access link will be released after acceptance.
+> **Note**: The dataset is now officially released on ScienceDB. Please use the ScienceDB link for data download.
 
 ---
 
