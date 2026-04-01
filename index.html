@@ -146,6 +146,8 @@ body {
 
 .badge-img {
     height: 24px;
+    width: auto;
+    display: inline-block;
 }
 
 /* ===== AUTHOR BLOCK ===== */
@@ -404,10 +406,10 @@ li {
     <!-- 🔥 VISUAL TEASER (extra gallery) -->
     <h2 class="fade">✨ Visual Teaser</h2>
     <div class="grid fade">
-        <img src="assets/agricultural+commercial.png" alt="scene1">
-        <img src="assets/burning+forest.png" alt="scene2">
-        <img src="assets/dark+IR.png" alt="dark ir">
-        <img src="assets/mining+pollution.png" alt="mining pollution">
+        <img src="assets/agricultural+commercial.png" loading="lazy" alt="scene1">
+        <img src="assets/burning+forest.png" loading="lazy" alt="scene2">
+        <img src="assets/dark+IR.png" loading="lazy" alt="dark ir">
+        <img src="assets/mining+pollution.png" loading="lazy" alt="mining pollution">
     </div>
 
     <!-- HIGHLIGHTS (enriched, aligned with README) -->
@@ -447,7 +449,7 @@ li {
     <!-- DATASET PIPELINE -->
     <h2 id="pipeline" class="fade">🧠 Dataset Pipeline</h2>
     <div class="pipeline fade">
-        <img src="assets/pipeline.png" alt="pipeline diagram">
+        <img src="assets/pipeline.png" loading="lazy" alt="pipeline diagram">
         <p class="center subnote">UAV acquisition → multi-modal alignment → annotation → multi-task learning</p>
     </div>
 
@@ -461,16 +463,16 @@ li {
     <p class="fade"><strong>Tasks:</strong> Scene classification, semantic/instance segmentation, object counting, OCR, environment understanding.</p>
     <p class="fade">UAIV emphasizes <strong>context-rich and governance-oriented perception</strong>. Each sample corresponds to real urban governance scenarios: illegal construction, open burning, environmental pollution, infrastructure monitoring. Aligned multi-modal signals (RGB, IR, metadata) enable joint reasoning about object presence, scene semantics, and environmental status.</p>
     <div class="grid fade">
-        <img src="assets/agricultural+commercial.png" alt="agri commercial">
-        <img src="assets/burning+forest.png" alt="burning forest">
-        <img src="assets/counting.png" alt="counting">
-        <img src="assets/dark+IR.png" alt="dark IR">
-        <img src="assets/excavator+fire.png" alt="excavator fire">
-        <img src="assets/farmland+excavation.png" alt="farmland excavation">
-        <img src="assets/lake+forest.png" alt="lake forest">
-        <img src="assets/mining+pollution.png" alt="mining pollution">
-        <img src="assets/OCR.png" alt="OCR example">
-        <img src="assets/river_pollution.png" alt="river pollution">
+        <img src="assets/agricultural+commercial.png" loading="lazy" alt="agri commercial">
+        <img src="assets/burning+forest.png" loading="lazy" alt="burning forest">
+        <img src="assets/counting.png" loading="lazy" alt="counting">
+        <img src="assets/dark+IR.png" loading="lazy" alt="dark IR">
+        <img src="assets/excavator+fire.png" loading="lazy" alt="excavator fire">
+        <img src="assets/farmland+excavation.png" loading="lazy" alt="farmland excavation">
+        <img src="assets/lake+forest.png" loading="lazy" alt="lake forest">
+        <img src="assets/mining+pollution.png" loading="lazy" alt="mining pollution">
+        <img src="assets/OCR.png" loading="lazy" alt="OCR example">
+        <img src="assets/river_pollution.png" loading="lazy" alt="river pollution">
     </div>
 
     <!-- 2. Spatio-Temporal Learning -->
@@ -478,8 +480,8 @@ li {
     <p class="fade"><strong>Tasks:</strong> Change detection, cross-time Re-ID.</p>
     <p class="fade">UAIV provides <strong>strictly aligned multi-temporal data</strong> across different time spans, flight routes, and environmental conditions. For change detection, it distinguishes true semantic changes from appearance variations (illumination/weather). Cross-time Re-ID enables identity-consistent learning under viewpoint and altitude shifts.</p>
     <div class="grid fade">
-        <img src="assets/Change_detection.png" alt="change detection">
-        <img src="assets/re-id.png" alt="re-id sample">
+        <img src="assets/Change_detection.png" loading="lazy" alt="change detection">
+        <img src="assets/re-id.png" loading="lazy" alt="re-id sample">
     </div>
 
     <!-- 3. Physics-Aware Restoration -->
@@ -487,10 +489,10 @@ li {
     <p class="fade"><strong>Tasks:</strong> Rain/snow/fog removal, cross-weather translation, weather-aware degradation modeling.</p>
     <p class="fade">Real-world paired/unpaired weather-degraded data (rain, snow, fog, haze) captured under consistent UAV trajectories. Preserves physical consistency: illumination variation, atmospheric scattering, sensor response differences. Enables recovery of intrinsic scene properties rather than only appearance translation.</p>
     <div class="grid fade">
-        <img src="assets/foggy.png" alt="foggy scene">
-        <img src="assets/haze&original.png" alt="haze original">
-        <img src="assets/rainy.png" alt="rainy">
-        <img src="assets/snowy.png" alt="snowy">
+        <img src="assets/foggy.png" loading="lazy" alt="foggy scene">
+        <img src="assets/haze&original.png" loading="lazy" alt="haze original">
+        <img src="assets/rainy.png" loading="lazy" alt="rainy">
+        <img src="assets/snowy.png" loading="lazy" alt="snowy">
     </div>
 
     <hr>
