@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/4.2_GIT.png" width="80%">
+</p>
+
 <h1 align="center">UAIV: A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence</h1>
 
 <p align="center">
