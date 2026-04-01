@@ -1,12 +1,48 @@
-<p align="center">
-  <img src="assets/4.1_GIT.png" width="80%">
-</p>
-
 <h1 align="center">UAIV: A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence</h1>
 
 <p align="center">
-  <i>Multi-scenario • Multi-modal • Multi-condition • Real-world UAV Intelligence</i>
+  <i>Multi-scenario · Multi-modal · Multi-condition · Real-world UAV Intelligence</i>
 </p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Paper-Under%20Review-blue">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+  <img src="https://img.shields.io/badge/Status-Partial%20Release-yellow">
+  <img src="https://img.shields.io/badge/Annotations-17B%2B-red">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue">
+  <img src="https://img.shields.io/badge/PyTorch-1.10%2B-orange">
+</p>
+
+<p align="center">
+  Jiening Zhang¹, Yangming Zhang¹, Pengwei Yang¹, Yupeng Gao¹, Xi Wu¹, Junyu Liu¹, <br>
+  Guoqing Wang¹,²\*, Tianyu Li¹\*, Yang Yang¹,²
+</p>
+
+<p align="center">
+  ¹ <em>School of Computer Science and Engineering, University of Electronic Science and Technology of China</em><br>
+  ² <em>Sichuan Artificial Intelligence Institute</em><br>
+  \* <em>Corresponding authors</em>
+</p>
+
+---
+
+## 📖 Table of Contents
+
+- [🔥 Visual Teaser](#-visual-teaser)
+- [🔥 Overview](#-overview)
+- [✨ Highlights](#-highlights)
+- [📊 Dataset Overview](#-dataset-overview)
+- [🧩 Task Definitions](#-task-definitions)
+  - [1. Scene Understanding](#1-scene-understanding)
+  - [2. Spatio-Temporal Learning](#2-spatio-temporal-learning)
+  - [3. Physics-Aware Image Restoration](#3-physics-aware-image-restoration)
+- [🧪 Benchmark](#-benchmark-coming-soon)
+- [📥 Data Access](#-data-access)
+- [🚀 Applications & Real-World Impact](#-applications--real-world-impact)
+- [📄 Dataset Description (Detailed)](#-dataset-description-detailed)
+- [🙏 Acknowledgements](#-acknowledgements)
+- [📚 Citation](#-citation)
+- [📄 License](#-license)
 
 ---
 
@@ -62,10 +98,14 @@ The dataset is built upon a **self-operated UAV acquisition system**, covering *
 
 ## 📊 Dataset Overview
 
-- **Scene diversity**: urban / rural / industrial / natural  
-- **Weather conditions**: sunny / rainy / foggy / snowy  
-- **Temporal coverage**: day / night  
-- **Metadata support**: GPS, timestamp, altitude, camera parameters  
+| Category | Details |
+|----------|--------|
+| Total Annotations | 17B+ |
+| Scene Categories | urban, rural, forest, industrial, commercial, agricultural, residential, school, lake, etc. |
+| Weather Conditions | sunny, rainy, foggy, snowy |
+| Temporal Coverage | day, night |
+| Modalities | RGB, IR, metadata (GPS, altitude, timestamp) |
+| Flight Altitudes | 50m–500m |
 
 ---
 
@@ -75,60 +115,37 @@ The dataset is built upon a **self-operated UAV acquisition system**, covering *
 
 ### 1. Scene Understanding
 
-**Tasks**
-- Scene classification  
-- Semantic segmentation  
-- Instance segmentation  
-- Object counting  
-- OCR  
-- Environment understanding  
+| Task | Input | Output | Key Challenge |
+|------|-------|--------|---------------|
+| Scene classification | RGB/IR | class label | cross-weather robustness |
+| Semantic segmentation | RGB/IR | pixel mask | fine-grained urban elements |
+| Instance segmentation | RGB/IR | instance masks | overlapping objects |
+| Object counting | RGB/IR | count | scale variation |
+| OCR | RGB | text | scene text under UAV view |
+| Environment understanding | RGB/IR + metadata | semantic status | multi-modal reasoning |
 
 **Description**
 
-UAIV goes beyond conventional scene understanding benchmarks by emphasizing **context-rich and governance-oriented perception**.
-
-Each sample is not only a visual recognition instance, but also corresponds to **real urban governance scenarios**, such as:
-
-- Illegal construction
-- Open burning
-- Environmental pollution
-- Infrastructure monitoring
-
-Unlike static datasets, UAIV provides:
-
-- **Aligned multi-modal signals (RGB, IR, metadata)**
-- **Strong environmental variations**
-
-This enables models to jointly reason about:
-
-- Object presence
-- Scene semantics
-- Environmental status
-
-making it particularly suitable for **robust perception under real-world uncertainty**.
-
----
+UAIV goes beyond conventional scene understanding benchmarks by emphasizing **context-rich and governance-oriented perception**. Each sample corresponds to **real urban governance scenarios**, such as illegal construction, open burning, environmental pollution, and infrastructure monitoring. The dataset provides **aligned multi-modal signals (RGB, IR, metadata)** and **strong environmental variations**, enabling models to jointly reason about object presence, scene semantics, and environmental status.
 
 **Examples**
 
 <p align="center">
-  <img src="assets/agricultural+commercial.png" width="45%">
-  <img src="assets/burning+forest.png" width="45%">
+  <img src="assets/agricultural+commercial.png" width="32%">
+  <img src="assets/burning+forest.png" width="32%">
+  <img src="assets/counting.png" width="32%">
 </p>
 <p align="center">
-  <img src="assets/counting.png" width="45%">
-  <img src="assets/dark+IR.png" width="45%">
+  <img src="assets/dark+IR.png" width="32%">
+  <img src="assets/excavator+fire.png" width="32%">
+  <img src="assets/farmland+excavation.png" width="32%">
 </p>
 <p align="center">
-  <img src="assets/excavator+fire.png" width="45%">
-  <img src="assets/farmland+excavation.png" width="45%">
+  <img src="assets/lake+forest.png" width="32%">
+  <img src="assets/mining+pollution.png" width="32%">
+  <img src="assets/OCR.png" width="32%">
 </p>
 <p align="center">
-  <img src="assets/lake+forest.png" width="45%">
-  <img src="assets/mining+pollution.png" width="45%">
-</p>
-<p align="center">
-  <img src="assets/OCR.png" width="45%">
   <img src="assets/river_pollution.png" width="45%">
 </p>
 
@@ -136,37 +153,14 @@ making it particularly suitable for **robust perception under real-world uncerta
 
 ### 2. Spatio-Temporal Learning
 
-**Tasks**
-- Change detection  
-- Cross-time Re-ID  
+| Task | Input | Output | Key Challenge |
+|------|-------|--------|---------------|
+| Change detection | image pairs (t1, t2) | change mask | distinguishing semantic change vs. appearance variation |
+| Cross-time Re-ID | object sequences across time | identity | domain shift across time/viewpoint/altitude |
 
 **Description**
 
-UAIV is specifically designed for **spatio-temporal reasoning under real-world dynamics**, with carefully aligned multi-temporal data collected across:
-
-- Different time spans  
-- Flight routes  
-- Environmental conditions  
-
-For **change detection**, UAIV provides:
-
-- **Strictly aligned image pairs**
-- Variations in season, construction progress, and environmental status  
-
-This allows models to distinguish:
-
-- **True semantic changes**
-- vs. **appearance variations caused by illumination or weather**
-
-For **cross-time Re-ID**, UAIV introduces a challenging setting where objects (vehicles, ships, infrastructure) are observed across:
-
-- Different timestamps  
-- Viewpoints  
-- Altitudes  
-
-This enables research on **identity-consistent representation learning under drastic domain shifts**.
-
----
+UAIV is specifically designed for **spatio-temporal reasoning under real-world dynamics**, with carefully aligned multi-temporal data collected across different time spans, flight routes, and environmental conditions. For **change detection**, the dataset provides strictly aligned image pairs with variations in season, construction progress, and environmental status, allowing models to distinguish true semantic changes from appearance variations caused by illumination or weather. For **cross-time Re-ID**, UAIV introduces a challenging setting where objects (vehicles, ships, infrastructure) are observed across different timestamps, viewpoints, and altitudes, enabling research on identity-consistent representation learning under drastic domain shifts.
 
 **Examples**
 
@@ -179,39 +173,16 @@ This enables research on **identity-consistent representation learning under dra
 
 ### 3. Physics-Aware Image Restoration
 
-**Tasks**
-- Rain / snow / fog removal  
-- Cross-weather image translation  
-- Weather-aware degradation modeling  
+| Task | Input | Output | Key Challenge |
+|------|-------|--------|---------------|
+| Rain removal | rainy RGB | clean RGB | real rain streaks, non-uniform |
+| Snow removal | snowy RGB | clean RGB | occlusion, lighting change |
+| Fog removal | foggy RGB | clean RGB | depth-dependent scattering |
+| Cross-weather translation | degraded image | clear image | preserving scene content |
 
 **Description**
 
-Unlike synthetic benchmarks, UAIV provides **real-world paired and unpaired weather-degraded data**, including:
-
-- Rain  
-- Snow  
-- Fog  
-- Haze  
-
-captured under **consistent UAV trajectories and sensor settings**.
-
-Crucially, the dataset preserves **physical consistency across conditions**, including:
-
-- Illumination variation  
-- Atmospheric scattering  
-- Sensor response differences  
-
-This enables the study of **physics-aware restoration**, aiming to recover:
-
-- **Intrinsic scene properties**
-rather than only performing appearance translation.
-
-The availability of **cross-modal signals (RGB–IR)** further allows models to leverage complementary information, making UAIV a valuable testbed for:
-
-- **Multi-modal restoration**
-- **Physically grounded image enhancement**
-
----
+Unlike synthetic benchmarks, UAIV provides **real-world paired and unpaired weather-degraded data**, including rain, snow, fog, and haze, captured under consistent UAV trajectories and sensor settings. The dataset preserves physical consistency across conditions (illumination variation, atmospheric scattering, sensor response differences), enabling the study of **physics-aware restoration** that aims to recover intrinsic scene properties rather than only performing appearance translation. The availability of **cross-modal signals (RGB–IR)** further allows models to leverage complementary information, making UAIV a valuable testbed for multi-modal restoration and physically grounded image enhancement.
 
 **Examples**
 
@@ -242,10 +213,10 @@ We will provide standardized benchmarks and baselines for:
 - Open subset (~30%) will be released  
 - Full dataset will be available in future versions  
 
-👉 GitHub: https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset/tree/main  
-👉 Project Page: https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/  
+👉 GitHub: [https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset/tree/main](https://github.com/JennyZhang0810/LowAltitude-Multimodal-Dataset/tree/main)  
+👉 Project Page: [https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/](https://jennyzhang0810.github.io/LowAltitude-Multimodal-Dataset/)
 
-> Note: The dataset has been submitted to **ScienceDB (Journal of Image and Graphics dataset track)** and is currently under review. The official data access link will be released after acceptance.
+> **Note**: The dataset has been submitted to **ScienceDB (Journal of Image and Graphics dataset track)** and is currently under review. The official data access link will be released after acceptance.
 
 ---
 
@@ -264,14 +235,14 @@ The system supports automated analysis for:
 - Environmental anomaly monitoring  
 - Infrastructure status assessment  
 
-### Impact
+**Impact**
 
 - Significant improvement in **semantic understanding under complex conditions**
 - Enhanced **event detection accuracy**
 - Reduced **manual inspection costs**
 - Faster **decision-making and response efficiency**
 
-### User Feedback
+**User Feedback**
 
 Practical deployments demonstrate that UAIV provides:
 
@@ -319,10 +290,18 @@ This dataset was **designed and led by the author**, covering the full pipeline 
 We sincerely thank:
 
 - **Xuzhou Transportation Control Group** for large-scale UAV data acquisition support  
-- **Multi-modal Intelligence Group (MIG) at UESTC led by Professor Guoqing Wang and Professor YangYang** for valuable collaboration and technical support  
+- **Multi-modal Intelligence Group (MIG) at UESTC**, led by Prof. Guoqing Wang and Prof. Yang Yang, for valuable collaboration and technical support  
 
 ---
 
-## 📄 License
+## 📚 Citation
 
-MIT License
+If you find UAIV useful for your research, please cite:
+
+```bibtex
+@article{zhang2025uaiv,
+  title={UAIV: A Large-Scale Low-Altitude Multimodal Dataset for Urban Intelligence},
+  author={Zhang, Jiening and Zhang, Yangming and Yang, Pengwei and Gao, Yupeng and Wu, Xi and Liu, Junyu and Wang, Guoqing and Li, Tianyu and Yang, Yang},
+  journal={arXiv preprint},
+  year={2026}
+}
